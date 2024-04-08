@@ -58,10 +58,15 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 local lspconfig = require('lspconfig')
 -- lsp server setting
-local servers = { 'lua_ls', 'pyright', 'tsserver', 'cssls', 'emmet_ls', 'clangd', 'gopls', 'bashls',
+local servers = {
+    'lua_ls',
+    'cssls',
+    'emmet_ls', 'clangd', 'gopls', 'bashls',
     'solidity_ls',
+    'pyright',
     'solidity_ls_nomicfoundation',
     'solang',
+    'tsserver',
     -- 'rome',
     -- 'solc',
     'solidity',
@@ -75,63 +80,3 @@ for _, lsp in ipairs(servers) do
         -- capabilities = require("config.handlers").capabilities,
     }
 end
-
--- local util = require("lspconfig/util")
--- require'lspconfig'.lua_ls.setup {
---     settings = {
---         Lua = {
---             runtime = {
---                 -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
---                 version = 'LuaJIT',
---             },
---             diagnostics = {
---                 -- Get the language server to recognize the `vim` global
---                 globals = {'vim'},
---             },
---             workspace = {
---                 -- Make the server aware of Neovim runtime files
---                 library = vim.api.nvim_get_runtime_file("", true),
---             },
---             -- Do not send telemetry data containing a randomized but unique identifier
---             telemetry = {
---                 enable = false,
---             },
---         },
---     },
---     cmd = { "lua-language-server" },
---     filetypes = { "lua" },
---     log_level = 2,
---     root_dir = util.root_pattern(".luarc.json", ".luarc.jsonc", ".luacheckrc", ".stylua.toml", "stylua.toml", "selene.toml", "selene.yml", ".git"),
---     single_file_support = true,
---     on_attach = on_attach,
--- }
--- require'lspconfig'.solang.setup{}
--- require'lspconfig'.solidity.setup{}
--- require'lspconfig'.solidity_ls.setup{}
--- require'lspconfig'.solidity_ls_nomicfoundation.setup{}
--- require'lspconfig'.solc.setup{}
--- -- require("lspconfig").solc.setup({
--- --     settings = {
--- --         ["rust-analyzer"] = {
--- --             diagnostics = {
--- --                 enable = false,
--- --             },
--- --         },
--- --     },
--- --     cmd = { "solc", "--lsp" },
--- --     filetypes = { "solidity" },
--- --     root_dir = util.root_pattern('hardhat.config.*', '.git'),
--- --     on_attach = on_attach,
--- -- })
---
--- require("lspconfig").bashls.setup({
---     cmd = { "bash-language-server", "start" },
---     settings = {
---         bashIde = {
---             globPattern = "*@(.sh|.inc|.bash|.command)",
---         },
---     },
---     filetypes = { "sh" },
---     root_dir = util.find_git_ancestor,
---     on_attach = on_attach,
--- })

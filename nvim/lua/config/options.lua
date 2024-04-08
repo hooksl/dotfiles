@@ -1,4 +1,8 @@
 -- Hint: use `:h <option>` to figure out the meaning if needed
+-- bufferline
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+-- vim.opt.termguicolors = true
 
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
@@ -34,9 +38,4 @@ vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is enter
 
 -- 插件
 -- colorscheme
--- vim.cmd[[colorscheme tokyonight]]
-
--- bufferline
--- vim.g.loaded_netrw = 1
--- vim.g.loaded_netrwPlugin = 1
--- vim.opt.termguicolors = true
+-- vim.cmd [[colorscheme tokyonight]]

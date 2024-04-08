@@ -1,0 +1,58 @@
+import = [
+    "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
+]
+[shell]
+args = ['--login']
+program = "/usr/bin/zsh"
+
+[cursor]
+style = "Beam"
+
+[font]
+size = 13.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+
+[window]
+# startup_mode = "Windowed"
+# dynamic_padding = true
+decorations = 'none'
+opacity = 0.98
+
+# [window.padding]
+# x = 6
+# y = 0
+
+[window.dimensions]
+columns = 150
+lines = 50
+
+# [colors.normal]
+# black = "0x2e3436"
+# red = "0xcc0000"
+# green = "0x73d216"
+# yellow = "0xedd400"
+# blue = "0x3465a4"
+# magenta = "0x75507b"
+# cyan = "0x06989a"
+# white = "0xd3d7cf"
+
+# [colors.bright]
+#  black=   '0x2e3436'
+#  red=     '0xef2929'
+#  green=   '0x8ae234'
+#  yellow=  '0xfce94f'
+#  blue=    '0x729fcf'
+#  magenta= '0xad7fa8'
+#  cyan=    '0x34e2e2'
+#  white=   '0xeeeeec'
+
+# [colors.primary]
+# background = "#282a36"
+# foreground = "0xeeeeec"
+
+# [colors.cursor]
+# text = "CellBackground"
+# cursor = "CellForeground"
+
