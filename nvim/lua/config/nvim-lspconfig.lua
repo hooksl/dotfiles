@@ -3,12 +3,17 @@ local lspconfig = require('lspconfig')
 lspconfig.pyright.setup {}
 lspconfig.tsserver.setup {}
 lspconfig.lua_ls.setup {}
+lspconfig.vue_language_server.setup {}
 -- lspconfig.rome.setup {}
 -- lspconfig.rome.setup {}
--- lspconfig.solc.setup {}
-require 'lspconfig'.html.setup {}
-require 'lspconfig'.solidity_ls.setup {}
-require 'lspconfig'.cssls.setup {}
+lspconfig.solc.setup {}
+lspconfig.html.setup {}
+lspconfig.cssls.setup {}
+lspconfig.solidity_ls.setup {}
+lspconfig.prettier.setup {}
+-- require 'lspconfig'.html.setup {}
+-- require 'lspconfig'.solidity_ls.setup {}
+-- require 'lspconfig'.cssls.setup {}
 -- require 'lspconfig'.prettier.setup {}
 
 -- Global mappings.

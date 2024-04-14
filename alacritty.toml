@@ -25,8 +25,8 @@ opacity = 0.98
 # y = 0
 
 [window.dimensions]
-columns = 150
-lines = 50
+columns = 180
+lines = 54
 
 # [colors.normal]
 # black = "0x2e3436"

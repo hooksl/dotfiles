@@ -68,9 +68,11 @@ local servers = {
     'solang',
     'tsserver',
     -- 'rome',
-    -- 'solc',
+    'solc',
     'solidity',
-    -- 'solc'
+    -- 'vue',
+    'solc',
+    -- 'prettier'
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {

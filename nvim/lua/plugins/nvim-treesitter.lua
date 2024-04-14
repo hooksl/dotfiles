@@ -6,7 +6,7 @@ return {
     config = function()
         require 'nvim-treesitter.configs'.setup {
             ensure_installed = { "vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "rust", "solidity",
-                "html", "css", "markdown", "markdown_inline", "regex" },
+                "html", "css", "markdown", "markdown_inline", "regex", "vue" },
             highlight = { enable = true },
             indent = { enable = true },
             incremental_selection = {

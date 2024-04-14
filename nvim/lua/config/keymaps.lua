@@ -5,6 +5,7 @@ local opts = {
 }
 
 
+
 -----------------:<C-U>TmuxNavigateRight<cr>
 -- Normal mode --
 -----------------
@@ -19,6 +20,11 @@ vim.keymap.set('i', '<C-h>', '<Left>', opts)
 vim.keymap.set('i', '<C-j>', '<Down>', opts)
 vim.keymap.set('i', '<C-k>', '<Up>', opts)
 vim.keymap.set('i', '<C-l>', '<Right>', opts)
+
+-- 折叠
+
+vim.keymap.set('n', 'zz', 'za', opts)
+vim.keymap.set('v', 'zz', 'zf', opts)
 
 -- let g:tmux_navigator_no_mappings = 1
 --
