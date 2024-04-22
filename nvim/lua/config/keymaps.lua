@@ -23,8 +23,8 @@ vim.keymap.set('i', '<C-l>', '<Right>', opts)
 
 -- 折叠
 
-vim.keymap.set('n', 'zz', 'za', opts)
-vim.keymap.set('v', 'zz', 'zf', opts)
+-- vim.keymap.set('n', 'zz', 'za', opts)
+-- vim.keymap.set('v', 'zz', 'zf', opts)
 
 -- let g:tmux_navigator_no_mappings = 1
 --
@@ -118,7 +118,7 @@ vim.keymap.set('n', '<leader>bp', ':BufferLineTogglePin<CR>', opts)
 vim.keymap.set('n', '<leader>bdl', ':BufferLineCloseRight<CR>', opts)
 vim.keymap.set('n', '<leader>bdh', ':BufferLineCloseLeft<CR>', opts)
 vim.keymap.set('n', '<leader><leader>', ':BufferLinePick<CR>', opts)
-vim.keymap.set('n', '<leader>bD', ':BufferLinePickClose<CR>', opts)
+vim.keymap.set('n', '<leader>bdd', ':BufferLineCloseOthers<CR>', opts)
 
 vim.keymap.set('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>', opts)
 vim.keymap.set('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>', opts)

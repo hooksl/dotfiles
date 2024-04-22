@@ -32,20 +32,21 @@ end
 function M.trans()
     local words = '"' .. M.get_words() .. '"'
     local m = ""
+    local proxy = "-x 127.0.0.1:2080 "
     if M.opts.trans_opts == "onlive" then
         if string.byte(words, 2) > 127 then
-            m = vim.fn.system("trans -no-ansi :en " .. words)
+            m = vim.fn.system("trans -no-ansi :en " .. proxy .. words)
         else
-            m = vim.fn.system("trans -no-ansi -b " .. words)
+            m = vim.fn.system("trans -no-ansi -b :zh " .. proxy .. words)
         end
     elseif M.opts.trans_opts == "sp" then
         if string.byte(words, 2) > 127 then
-            m = vim.fn.system("trans -no-ansi -sp -d :en " .. words)
+            m = vim.fn.system("trans -no-ansi -sp -d :en " .. proxy .. words)
         else
-            m = vim.fn.system("trans -no-ansi -sp -b " .. words)
+            m = vim.fn.system("trans -no-ansi -sp -b :zh " .. proxy .. words)
         end
     else
-        m = vim.fn.system("sdcv -e " .. words)
+        m = vim.fn.system("sdcv -e " .. proxy .. words)
     end
     return m
 end
