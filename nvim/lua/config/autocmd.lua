@@ -1,13 +1,13 @@
 vim.cmd [[
 
-augroup _format
-autocmd!
-autocmd BufWritePre * lua vim.lsp.buf.format()
-augroup end
+" -- augroup _format
+" -- autocmd!
+" " -- autocmd BufWritePre * lua vim.lsp.buf.format()
+" -- augroup end
 
 "代码折叠映射
-nnoremap <tab> za
-vnoremap <tab> zf
+" nnoremap <tab> za
+" vnoremap <tab> zf
 
 " 自动保存折叠
 

@@ -5,19 +5,19 @@ return {
     end,
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "rust", "solidity",
-                "html", "css", "markdown", "markdown_inline", "regex", "vue" },
+            ensure_installed = { "vue","html","css","vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "rust", "solidity","vue"},
+            -- ensure_installed = {},
             highlight = { enable = true },
             indent = { enable = true },
-            incremental_selection = {
-                enable = true,
-                keymaps = {
-                    init_selection = "<TAB>", -- set to `false` to disable one of the mappings
-                    node_incremental = "<TAB>",
-                    scope_incremental = "<CR>",
-                    node_decremental = "<BS>",
-                },
-            },
+            -- incremental_selection = {
+            --     enable = true,
+            --     keymaps = {
+            --         init_selection = "<TAB>", -- set to `false` to disable one of the mappings
+            --         node_incremental = "<TAB>",
+            --         scope_incremental = "<CR>",
+            --         node_decremental = "<BS>",
+            --     },
+            -- },
 
         }
     end,

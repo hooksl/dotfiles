@@ -1,36 +1,36 @@
 -- Setup language servers.
 local lspconfig = require('lspconfig')
 -- local vue_language_server_path = '/path/to/@vue/language-server'
-local mason_registry = require('mason-registry')
-local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
-    '/node_modules/@vue/language-server'
-lspconfig.pyright.setup {}
-lspconfig.tsserver.setup {
-    init_options = {
-        plugins = {
-            {
-                name = '@vue/typescript-plugin',
-                location = vue_language_server_path,
-                languages = { 'vue' },
-            },
-        },
-    },
-    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-}
-lspconfig.volar.setup {}
-lspconfig.lua_ls.setup {}
-lspconfig.vue_language_server.setup {}
--- lspconfig.rome.setup {}
--- lspconfig.rome.setup {}
--- lspconfig.solc.setup {}
-lspconfig.html.setup {}
-lspconfig.cssls.setup {}
--- lspconfig.solidity_ls.setup {}
-lspconfig.prettier.setup {}
+-- local mason_registry = require('mason-registry')
+-- local vue_language_server_path = mason_registry.get_package('vue-language-server'):get_install_path() ..
+--     '/node_modules/@vue/language-server'
+-- lspconfig.pyright.setup {}
+-- lspconfig.tsserver.setup {
+--     -- init_options = {
+--     --     plugins = {
+--     --         {
+--     --             name = '@vue/typescript-plugin',
+--     --             location = vue_language_server_path,
+--     --             languages = { 'vue' },
+--     --         },
+--     --     },
+--     -- },
+--     -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+-- }
+-- -- lspconfig.volar.setup {}
+-- lspconfig.lua_ls.setup {}
+-- -- lspconfig.vue_language_server.setup {}
+-- -- lspconfig.rome.setup {}
+-- -- lspconfig.rome.setup {}
+-- -- lspconfig.solc.setup {}
+-- lspconfig.html.setup {}
+-- lspconfig.cssls.setup {}
+-- -- lspconfig.solidity_ls.setup {}
+-- lspconfig.prettier.setup {}
 -- require 'lspconfig'.html.setup {}
 -- require 'lspconfig'.solidity_ls.setup {}
 -- require 'lspconfig'.cssls.setup {}
--- require 'lspconfig'.prettier.setup {}
+require 'lspconfig'.prettier.setup {}
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

@@ -59,21 +59,21 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 -- lsp server setting
 local servers = {
-    'lua_ls',
-    'cssls',
-    'emmet_ls', 'clangd', 'gopls', 'bashls',
-    -- 'solidity_ls',
-    'pyright',
-    -- 'solidity_ls_nomicfoundation',
-    -- 'solang',
-    'tsserver',
+    -- 'lua_ls',
+    -- 'cssls',
+    -- -- 'emmet_ls', 'clangd', 'gopls', 'bashls',
+    -- -- 'solidity_ls',
+    -- 'pyright',
+    -- -- 'solidity_ls_nomicfoundation',
+    -- -- 'solang',
+    -- 'tsserver',
     -- 'rome',
     -- 'solc',
     -- 'solidity',
     -- 'vue',
-    'vue_language_server',
+    -- 'vue_language_server',
     -- 'solc',
-    -- 'prettier'
+    'prettier'
 }
 for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup {
