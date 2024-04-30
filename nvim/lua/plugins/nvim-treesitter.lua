@@ -5,7 +5,7 @@ return {
     end,
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "vue","html","css","vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "rust", "solidity","vue"},
+            ensure_installed = { "vue","html","css","vim", "bash", "c", "cpp", "javascript", "json", "lua", "python", "rust", "solidity"},
             -- ensure_installed = {},
             highlight = { enable = true },
             indent = { enable = true },

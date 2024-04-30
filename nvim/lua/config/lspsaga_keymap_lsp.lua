@@ -59,7 +59,7 @@ local capabilities = require("cmp_nvim_lsp").default_capabilities()
 local lspconfig = require('lspconfig')
 -- lsp server setting
 local servers = {
-    -- 'lua_ls',
+    'lua_ls',
     -- 'cssls',
     -- -- 'emmet_ls', 'clangd', 'gopls', 'bashls',
     -- -- 'solidity_ls',

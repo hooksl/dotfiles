@@ -46,7 +46,7 @@ function M.trans()
             m = vim.fn.system("trans -no-ansi -sp -b :zh " .. proxy .. words)
         end
     else
-        m = vim.fn.system("sdcv -e " .. proxy .. words)
+        m = vim.fn.system("sdcv -e " .. words)
     end
     return m
 end
