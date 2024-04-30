@@ -3,7 +3,7 @@
 -- vim.g.loaded_netrwPlugin = 1
 -- vim.opt.termguicolors = true
 return {
-    'akinsho/bufferline.nvim', version = "*",
+    'akinsho/bufferline.nvim', 
     dependencies = 'nvim-tree/nvim-web-devicons',
     event = "VeryLazy",
     config = function()
