@@ -1,179 +1,86 @@
-local cmp_status_ok, cmp = pcall(require, "cmp")
-if not cmp_status_ok then
-    return
+
+local has_words_before = function()
+    unpack = unpack or table.unpack
+    local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+    return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local snip_status_ok, luasnip = pcall(require, "luasnip")
-if not snip_status_ok then
-    return
-end
-
-require("luasnip.loaders.from_vscode").lazy_load()
-
--- 下面会用到这个函数
-local check_backspace = function()
-    local col = vim.fn.col "." - 1
-    return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
-end
+local luasnip = require("luasnip")
+local cmp = require("cmp")
+local lspkind = require("lspkind")
 
 cmp.setup({
-    formatting = {
-        fields = { 'abbr', 'kind', 'menu' },
-        format = function(entry, item)
-            local menu_icon = {
-                nvim_lsp = '[nvim_lsp]',
-                luasnip = '[luasnip]',
-                buffer = '[buffer]',
-                path = '[path]',
-            }
-            item.menu = menu_icon[entry.source.name]
-
-            local kind_icon = {
-                Text = "󰉿",
-                Method = "󰆧",
-                Function = "󰊕",
-                Constructor = "",
-                Field = "",
-                Variable = "󰀫",
-                Class = "󰠱",
-                Interface = "",
-                Module = "",
-                Property = " ",
-                Unit = "󰑭",
-                Value = "󰎠",
-                Enum = "",
-                Keyword = "󰌋",
-                Snippet = "",
-                Color = "󰏘",
-                File = "󰈙",
-                Reference = "󰈇",
-                Folder = "󰉋",
-                EnumMember = "",
-                Constant = "󰏿",
-                Struct = "󰙅",
-                Event = "",
-                Operator = "󰆕",
-                TypeParameter = "",
-            }
-            item.kind = kind_icon[item.kind]
-            -- item.kind = kind_icon[item.kind] .. ' ' .. item.kind
-            return item
-        end,
-    },
     snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
-            -- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
             require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-            -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-            -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
         end,
     },
-    window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
-    },
-    experimental = {
-        ghost_text = true,
-        native_menu = false,
-    },
     mapping = cmp.mapping.preset.insert({
-        ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
-        ['<C-e>'] = cmp.mapping.abort(), -- 取消补全，esc也可以退出
+        ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 's' }),
+        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 's' }),
+        ['<esc>'] = cmp.mapping({
+            i = cmp.mapping.abort(),
+            c = cmp.mapping.close(),
+        }),
+        -- Use <C-k/j> to switch in items
+        ['<C-k>'] = cmp.mapping.select_prev_item(),
+        ['<C-j>'] = cmp.mapping.select_next_item(),
+        -- Use <CR>(Enter) to confirm selection
+        -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
-        ["<Tab>"] = cmp.mapping(
-            function(fallback)
-                if cmp.visible() then
-                    cmp.select_next_item()
-                elseif luasnip.expandable() then
-                    luasnip.expand()
-                elseif luasnip.expand_or_jumpable() then
-                    luasnip.expand_or_jump()
-                elseif check_backspace() then
-                    fallback()
-                else
-                    fallback()
-                end
-            end,
-            { "i", "s", }),
-
-        ["<S-Tab>"] = cmp.mapping(
-            function(fallback)
-                if cmp.visible() then
-                    cmp.select_prev_item()
-                elseif luasnip.jumpable(-1) then
-                    luasnip.jump(-1)
-                else
-                    fallback()
-                end
-            end,
-            { "i", "s", }),
+        -- A super tab
+        -- sourc: https://github.com/hrsh7th/nvim-cmp/wiki/Example-mappings#luasnip
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            -- Hint: if the completion menu is visible select next one
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif has_words_before() then
+                cmp.complete()
+            else
+                fallback()
+            end
+        end, { "i", "s" }), -- i - insert mode; s - select mode
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     }),
-    sources = cmp.config.sources({
-            { name = 'nvim_lsp' },
-            -- { name = 'vsnip' }, -- For vsnip users.
-            { name = 'luasnip' }, -- For luasnip users. 暂时不用，太多提示
-            -- { name = 'ultisnips' }, -- For ultisnips users.
-            -- { name = 'snippy' }, -- For snippy users.
-        },
-        {
-            { name = 'buffer' },
-            { name = 'path' },
-        })
-})
 
--- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+    -- Let's configure the item's appearance
+    -- source: https://github.com/hrsh7th/nvim-cmp/wiki/Menu-Appearance
+    formatting = {
+        format = lspkind.cmp_format({
+            with_text = true, -- do not show text alongside icons
+            -- maxwidth = 50,    -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+            before = function(entry, vim_item)
+                -- Source 显示提示来源
+                vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
+                return vim_item
+            end
+        })
+    },
+
+    -- Set source precedence
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' }, -- For nvim-lsp
+        { name = 'luasnip' },  -- For luasnip user
+        { name = 'buffer' },   -- For buffer word completion
+        { name = 'path' },     -- For path completion
+    })
+})
 cmp.setup.cmdline({ '/', '?' }, {
     mapping = cmp.mapping.preset.cmdline(),
     sources = {
         { name = 'buffer' }
     },
-    formatting = {
-        fields = { 'abbr', 'kind', 'menu' },
-        format = function(entry, item)
-            local menu_icon = {
-                buffer = '[buffer]',
-            }
-
-            item.menu = menu_icon[entry.source.name]
-            local kind_icon = {
-                Text = "󰉿",
-                Method = "󰆧",
-                Function = "󰊕",
-                Constructor = "",
-                Field = " ",
-                Variable = "󰀫",
-                Class = "󰠱",
-                Interface = "",
-                Module = "",
-                Property = " ",
-                Unit = "󰑭",
-                Value = "󰎠",
-                Enum = "",
-                Keyword = "󰌋",
-                Snippet = " ",
-                Color = "󰏘",
-                File = "󰈙",
-                Reference = "󰈇",
-                Folder = "󰉋",
-                EnumMember = "",
-                Constant = "󰏿",
-                Struct = "󰙅",
-                Event = "",
-                Operator = "󰆕",
-                TypeParameter = "",
-            }
-            item.kind = kind_icon[item.kind] .. ' ' .. item.kind
-
-            return item
-        end,
-    },
-
 })
-
--- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline(':', {
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
@@ -181,45 +88,6 @@ cmp.setup.cmdline(':', {
     }, {
         { name = 'cmdline' }
     }),
-    formatting = {
-        fields = { 'abbr', 'kind', 'menu' },
-        format = function(entry, item)
-            local menu_icon = {
-                path = '[path]',
-                cmdline = '[cmd]'
-            }
-
-            item.menu = menu_icon[entry.source.name]
-            local kind_icon = {
-                Text = "󰉿",
-                Method = "󰆧",
-                Function = "󰊕",
-                Constructor = "",
-                Field = " ",
-                Variable = "󰀫",
-                Class = "󰠱",
-                Interface = "",
-                Module = "",
-                Property = " ",
-                Unit = "󰑭",
-                Value = "󰎠",
-                Enum = "",
-                Keyword = "󰌋",
-                Snippet = " ",
-                Color = "󰏘",
-                File = "󰈙",
-                Reference = "󰈇",
-                Folder = "󰉋",
-                EnumMember = "",
-                Constant = "󰏿",
-                Struct = "󰙅",
-                Event = "",
-                Operator = "󰆕",
-                TypeParameter = "",
-            }
-            item.kind = kind_icon[item.kind] .. ' ' .. item.kind
-
-            return item
-        end,
-    },
 })
+-- load vscode snippet (friendly-snippet)
+require("luasnip.loaders.from_vscode").lazy_load()

@@ -1,3 +1,5 @@
+
+
 -- -- Setup language servers.
 -- local lspconfig = require('lspconfig')
 -- -- local vue_language_server_path = '/path/to/@vue/language-server'
