@@ -10,12 +10,13 @@
 -- return {}
 require('config.options')
 require('config.keymaps')
+require('config.lsp')
 require('config.nvim-cmp')
 -- require('config.nvim-lspconfig')
-require('config.lsp')
 -- require('config.lspsaga')
 require('config.autocmd')
 -- require('config.lspsaga_keymap_lsp')
 require('config.toggleterm')
 require('config.floatwin').mappings()
 require('config.colorscheme')
+

@@ -12,9 +12,12 @@ require('mason-lspconfig').setup({
     -- A list of servers to automatically install if they're not already installed
     -- 自动安装服务
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    ensure_installed = { 'lua_ls' },
+    ensure_installed = { 'lua_ls',
+        'volar',
+        'cssls',
+        'emmet_ls',
+        'tsserver' },
 })
-
 -- ...
 -- Set different settings for different languages' LSP
 -- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
@@ -62,6 +65,8 @@ end
 -- How to add LSP for a specific language?
 -- 1. use `:Mason` to install corresponding LSP
 -- 2. add configuration below
+
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 lspconfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {
@@ -69,5 +74,29 @@ lspconfig.lua_ls.setup({
             -- 解决提示 undefined global `vim`
             diagnostics = { globals = { 'vim' } }
         }
-    }
+    },
+    capabilities = capabilities,
 })
+lspconfig.tsserver.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.cssls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.emmet_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.volar.setup { filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    on_attach = on_attach,
+    capabilities = capabilities,
+
+    init_options = {
+        vue = {
+            hybridMode = false,
+        },
+    },
+}
+
