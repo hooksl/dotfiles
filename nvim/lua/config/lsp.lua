@@ -14,6 +14,7 @@ require('mason-lspconfig').setup({
     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     ensure_installed = { 'lua_ls',
         'volar',
+        'html',
         'cssls',
         'emmet_ls',
         'tsserver'
@@ -32,7 +33,7 @@ local lspconfig = require('lspconfig')
 local on_attach = function(client, bufnr)
     local opts = { noremap = true, silent = true, buffer = bufnr }
     local keymap = vim.keymap.set
-    keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+    keymap("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
     keymap({ "n", "v" }, "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
     keymap("n", "gr", "<cmd>Lspsaga rename<CR>", opts)
     keymap("n", "gp", "<cmd>Lspsaga peek_definition<CR>", opts)
@@ -78,6 +79,10 @@ lspconfig.cssls.setup {
     capabilities = capabilities,
 }
 lspconfig.emmet_ls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+}
+lspconfig.html.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }

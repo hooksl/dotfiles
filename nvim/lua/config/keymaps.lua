@@ -15,7 +15,7 @@ vim.keymap.set('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>', opts)
 vim.keymap.set('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>', opts)
 vim.keymap.set('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>', opts)
 vim.keymap.set('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>', opts)
-vim.keymap.set('n', '<C-w>', ':<C-U>TmuxNavigatePrevious<cr>', opts)
+-- vim.keymap.set('n', '<C-w>', ':<C-U>TmuxNavigatePrevious<cr>', opts)
 vim.keymap.set('i', '<C-h>', '<Left>', opts)
 vim.keymap.set('i', '<C-j>', '<Down>', opts)
 vim.keymap.set('i', '<C-k>', '<Up>', opts)
@@ -53,6 +53,11 @@ vim.keymap.set('n', '<c-x>', '<c-w>x', opts)
 -- buffers
 vim.keymap.set('n', '<leader>h', ':bp<cr>', opts)
 vim.keymap.set('n', '<leader>l', ':bn<cr>', opts)
+-- 移除lsp里面的映射，加速切换c-w
+vim.cmd([[
+unmap <c-w><c-d>
+unmap <c-w>d
+]])
 vim.keymap.set('n', '<c-w>', ':buffer #<cr>', opts)
 
 vim.cmd([[
