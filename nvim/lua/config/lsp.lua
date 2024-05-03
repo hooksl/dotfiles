@@ -86,7 +86,9 @@ lspconfig.html.setup {
     on_attach = on_attach,
     capabilities = capabilities,
 }
-lspconfig.volar.setup { filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+lspconfig.volar.setup {
+    -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    filetypes = { 'typescript', 'javascript', 'vue', 'json' },
     on_attach = on_attach,
     capabilities = capabilities,
 

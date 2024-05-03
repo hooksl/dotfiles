@@ -2,7 +2,9 @@
 -- bufferline
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
--- vim.opt.termguicolors = true
+-- 外观
+vim.opt.termguicolors = true
+vim.opt.signcolumn = "yes"
 
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
@@ -32,10 +34,4 @@ vim.opt.hlsearch = false  -- do not highlight matches
 vim.opt.ignorecase = true -- ignore case in searches by default
 vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is entered
 
--- 外观
--- vim.opt.termguicolors = true
--- vim.opt.signcolumn = "yes"
 
--- 插件
--- colorscheme
--- vim.cmd [[colorscheme tokyonight]]

@@ -10,7 +10,6 @@ vim.cmd [[
 " vnoremap <tab> zf
 
 " 自动保存折叠
-
 " augroup _saveview
 " autocmd!
 " autocmd BufWinLeave *.c, *.lua, *.sol mkview

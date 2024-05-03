@@ -2,11 +2,27 @@ return {
     'nvimdev/lspsaga.nvim',
     config = function()
         require('lspsaga').setup({
-            symbol_in_winbar = {    -- 顶部条
+            symbol_in_winbar = { -- 顶部条
                 enable = false
             },
-            outline ={
+            outline = {
                 auto_preview = false
+            },
+            lightbulb = {
+                enable = false, -- 关闭灯塔                enable_in_insert = true,
+                sign = true,
+                sign_priority = 40,
+                virtual_text = true,
+            },
+            -- rename = {
+            --     quit = "<C-c>",
+            --     exec = "<CR>",
+            --     mark = "x",
+            --     confirm = "<CR>",
+            --     in_select = true,
+            -- },
+            ui = {
+                -- code_action =
             }
         })
     end,

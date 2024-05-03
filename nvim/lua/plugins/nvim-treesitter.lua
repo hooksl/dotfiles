@@ -5,10 +5,11 @@ return {
     end,
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            ensure_installed = { "vue","html","css",
-                "vim", "bash", "c", "cpp", "javascript",
+            ensure_installed = { "vue", "html", "css",
+                "vim", "bash", "c", "cpp",
                 "json", "lua", "python", "rust", "solidity",
-                "markdown","markdown_inline"
+                "markdown", "markdown_inline",
+                "javascript", "typescript"
             },
             -- ensure_installed = {},
             highlight = { enable = true },
