@@ -5,14 +5,5 @@ return {
     -- install jsregexp (optional!).
     build = "make install_jsregexp",
     dependencies = { "rafamadriz/friendly-snippets" },
-    config = function()
-        require('lualine').setup {
-            options = {
-                -- ... your lualine config
-                theme = 'tokyonight'
-                -- ... your lualine config
-            }
-        }
-    end,
 
 }
