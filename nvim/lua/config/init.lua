@@ -16,5 +16,5 @@ require('config.autocmd')
 require('config.toggleterm')
 require('config.floatwin').mappings()
 require('config.colorscheme')
--- vim.opt.laststatus = 0
 
+vim.opt.laststatus = 3
