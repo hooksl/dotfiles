@@ -79,10 +79,6 @@ return {
             },
             capabilities = capabilities,
         })
-        lspconfig.tsserver.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        }
         lspconfig.cssls.setup {
             on_attach = on_attach,
             capabilities = capabilities,
@@ -95,17 +91,26 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
         }
-        lspconfig.volar.setup {
-            -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-            filetypes = {"vue"},
+        lspconfig.tsserver.setup {
             on_attach = on_attach,
             capabilities = capabilities,
-
+        }
+        lspconfig.volar.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+            -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
+            filetypes = {"vue"},
             init_options = {
+                typescript = {
+                    -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
+                    -- Alternative location if installed as root:
+                    tsdk = '/usr/local/lib/node_modules/typescript/lib',
+                },
                 vue = {
                     hybridMode = false,
                 },
             },
+
         }
 
         local signs = {
