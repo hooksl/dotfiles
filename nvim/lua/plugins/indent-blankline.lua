@@ -9,7 +9,7 @@ return {
             },
             scope = {
                 -- 关掉函数上的横线
-                enabled = false
+                enabled = false,
             }
             -- for example, context is off by default, use this to turn it on
             -- show_current_context = true,

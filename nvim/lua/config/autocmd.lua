@@ -32,8 +32,8 @@ augroup END]])
 
 -- Don't auto commenting new lines
 -- 不要回车自动加注释
-vim.api.nvim_create_autocmd("BufEnter", {
-    pattern = "",
-    command = "set fo-=c fo-=r fo-=o",
-})
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--     pattern = "",
+--     command = "set fo-=c fo-=r fo-=o",
+-- })
 

@@ -4,11 +4,8 @@ return {
     event = "VeryLazy",
     config = function()
         require("bufferline").setup({
-
             options = {
-
                 diagnostics = "nvim_lsp",
-
                 offsets = { {
                     filetype = "neo-tree",
                     text = "File Explorer",
@@ -18,7 +15,7 @@ return {
                 -- numbers = function(opts)
                 --     return string.format('%s', opts.ordinal)
                 -- end,
-                -- separator_style = "slant"
+                separator_style = "thin"
             },
         })
     end,
