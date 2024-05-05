@@ -97,7 +97,7 @@ return {
         }
         lspconfig.volar.setup {
             -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
-            filetypes = { 'typescript', 'javascript', 'vue', 'json' },
+            filetypes = {"vue"},
             on_attach = on_attach,
             capabilities = capabilities,
 
