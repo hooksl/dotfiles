@@ -10,10 +10,7 @@
 -- return {}
 require('config.options')
 require('config.keymaps')
--- require('config.lsp')
--- require('config.nvim-cmp')
-require('config.autocmd')
--- require('config.toggleterm')
+-- require('config.autocmd')
 require('config.floatwin').mappings()
 require('config.colorscheme')
 

@@ -9,7 +9,7 @@ return {
                 "vim", "bash", "c", "cpp",
                 "json", "lua", "python", "rust", "solidity",
                 "markdown", "markdown_inline",
-                "javascript", "typescript"
+                "javascript", "typescript","vimdoc"
             },
             -- ensure_installed = {},
             highlight = { enable = true },

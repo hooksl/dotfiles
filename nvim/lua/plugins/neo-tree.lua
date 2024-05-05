@@ -1,15 +1,16 @@
 return {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
+    branch = "v3.x",
     dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
+        "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     keys = {
         { "<F3>", "<cmd>Neotree toggle<cr>", desc = "打开/关闭树" },
         -- { "<space>", "v", desc = "替换v键盘", remap = true },
-        { "<leader>e", "<cmd>NeoTreeReveal<cr>", desc = "打开/关闭树" },
+        { "<leader>e", "<cmd>Neotree reveal<cr>", desc = "打开/关闭树" },
     },
     config = function()
         -- unless you are still migrating, remove the deprecated commands from v1.x
@@ -143,7 +144,7 @@ return {
                     -- ["<cr>"] = "open",
                     ["o"] = "open",
                     ["<esc>"] = "revert_preview",
-                    ["P"] = { "toggle_preview", config = { use_float = true } },
+                    ["P"] = { "toggle_preview", config = { use_float = true, use_image_nvim = true } },
                     ["<cr>"] = "focus_preview",
                     ["i"] = "open_split",
                     ["s"] = "open_vsplit",
@@ -275,6 +276,5 @@ return {
             }
         })
 
-        vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
     end,
 }
