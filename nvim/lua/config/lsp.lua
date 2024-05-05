@@ -1,25 +1,25 @@
-require('mason').setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
-
-require('mason-lspconfig').setup({
-    -- A list of servers to automatically install if they're not already installed
-    -- 自动安装服务
-    -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-    ensure_installed = { 'lua_ls',
-        'volar',
-        'html',
-        'cssls',
-        'emmet_ls',
-        'tsserver'
-    },
-})
+-- require('mason').setup({
+--     ui = {
+--         icons = {
+--             package_installed = "✓",
+--             package_pending = "➜",
+--             package_uninstalled = "✗"
+--         }
+--     }
+-- })
+--
+-- require('mason-lspconfig').setup({
+--     -- A list of servers to automatically install if they're not already installed
+--     -- 自动安装服务
+--     -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+--     ensure_installed = { 'lua_ls',
+--         'volar',
+--         'html',
+--         'cssls',
+--         'emmet_ls',
+--         'tsserver'
+--     },
+-- })
 -- ...
 -- Set different settings for different languages' LSP
 -- LSP list: https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md

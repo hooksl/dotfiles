@@ -1,5 +1,10 @@
 return {
     'nvimdev/lspsaga.nvim',
+    dependencies = {
+        'nvim-treesitter/nvim-treesitter', -- optional
+        'nvim-tree/nvim-web-devicons',     -- optional
+        "neovim/nvim-lspconfig",
+    },
     config = function()
         require('lspsaga').setup({
             symbol_in_winbar = { -- 顶部条
@@ -26,8 +31,4 @@ return {
             }
         })
     end,
-    dependencies = {
-        'nvim-treesitter/nvim-treesitter', -- optional
-        'nvim-tree/nvim-web-devicons',     -- optional
-    }
 }
