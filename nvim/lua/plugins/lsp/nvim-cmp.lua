@@ -12,31 +12,6 @@ return {
         {
             "L3MON4D3/LuaSnip",
             'saadparwaiz1/cmp_luasnip',
-            keys = {
-                {
-                    '<C-j>',
-                    function()
-                        return require('luasnip').jumpable(1) and '<Plug>luasnip-jump-next' or '<space>'
-                    end,
-                    expr = true,
-                    silent = true,
-                    mode = 'i',
-                },
-                {
-                    '<C-j>',
-                    function()
-                        require('luasnip').jump(1)
-                    end,
-                    mode = 's',
-                },
-                {
-                    '<C-k>',
-                    function()
-                        require('luasnip').jump(-1)
-                    end,
-                    mode = { 'i', 's' },
-                },
-            },
         },
         "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
         "hrsh7th/cmp-buffer",   -- buffer auto-completion
@@ -65,12 +40,20 @@ return {
                 end,
             },
             window = {
-                completion = cmp.config.window.bordered(),
-                documentation = cmp.config.window.bordered(),
+                completion = cmp.config.window.bordered({
+                    winhighlight = "Normal:transparentBG,FloatBorder:transparentBG,Search:None",
+                }),
+                documentation = cmp.config.window.bordered({
+                    winhighlight =
+                    "Normal:transparentBG,FloatBorder:transparentBG,Search:None"
+                }),
+
             },
             mapping = cmp.mapping.preset.insert({
-                ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-                ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+                ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+                ['<C-d>'] = cmp.mapping.scroll_docs(4),
+                -- ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+                -- ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
                 -- ['<esc>'] = cmp.mapping({
                 --     i = cmp.mapping.abort(),
                 --     c = cmp.mapping.close(),
@@ -89,8 +72,8 @@ return {
                     -- cmp.complete() 弹出补全
                     if cmp.visible() then
                         cmp.select_next_item()
-                    -- elseif has_words_before() then
-                    --     cmp.complete()
+                        -- elseif has_words_before() then
+                        --     cmp.complete()
                     elseif luasnip.jumpable(1) then
                         luasnip.jump(1)
                     else
@@ -114,6 +97,7 @@ return {
                 format = lspkind.cmp_format({
                     with_text = true,         -- do not show text alongside icons
                     maxwidth = 50,            -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+                    maxheight = 10,
                     ellipsis_char = '...',    -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
                     show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
@@ -127,12 +111,14 @@ return {
 
             -- Set source precedence
             sources = cmp.config.sources({
-                { name = 'nvim_lsp' }, -- For nvim-lsp
-                -- { name = 'nvim_lsp', keyword_length = 4 }, -- For nvim-lsp
-                { name = 'luasnip' },  -- For luasnip user
-                { name = 'buffer' },   -- For buffer word completion
-                { name = 'path' },     -- For path completion
-            })
+                    { name = 'luasnip' },  -- 优先使用luasnip，没有匹配到的话才用下面的源
+                },
+                {
+                    -- { name = 'nvim_lsp', keyword_length = 2 },
+                    { name = 'nvim_lsp' },
+                    { name = 'buffer' },
+                    { name = 'path' },
+                })
         })
         cmp.setup.cmdline({ '/', '?' }, {
             mapping = cmp.mapping.preset.cmdline(),
