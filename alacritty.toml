@@ -16,17 +16,20 @@ family = "JetBrainsMono Nerd Font"
 
 [window]
 # startup_mode = "Windowed"
-# dynamic_padding = true
+# startup_mode="Maximized"
+# padding={ x=5,y=4 }
+# class={ instance="Alacritty",general="Alacritty"}
+# resize_increments=true
+# dynamic_padding = false
+# option_as_alt="OnlyRight"
 decorations = 'none'
-opacity = 0.95
-
+opacity = 0.99
+blur = true
+dimensions={columns=180,lines=60}
 # [window.padding]
 # x = 6
-# y = 0
+# y = 10
 
-[window.dimensions]
-columns = 180
-lines = 54
 
 # [colors.normal]
 # black = "0x2e3436"

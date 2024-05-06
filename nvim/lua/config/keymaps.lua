@@ -16,10 +16,10 @@ vim.keymap.set('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>', opts)
 vim.keymap.set('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>', opts)
 vim.keymap.set('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>', opts)
 -- vim.keymap.set('n', '<C-w>', ':<C-U>TmuxNavigatePrevious<cr>', opts)
-vim.keymap.set('i', '<C-h>', '<Left>', opts)
-vim.keymap.set('i', '<C-j>', '<Down>', opts)
-vim.keymap.set('i', '<C-k>', '<Up>', opts)
-vim.keymap.set('i', '<C-l>', '<Right>', opts)
+-- vim.keymap.set('i', '<C-h>', '<Left>', opts)
+-- vim.keymap.set('i', '<C-j>', '<Down>', opts)
+-- vim.keymap.set('i', '<C-k>', '<Up>', opts)
+-- vim.keymap.set('i', '<C-l>', '<Right>', opts)
 
 -- 折叠
 
@@ -105,7 +105,7 @@ local function map(mode, lhs, rhs, opts)
     end
 end
 -- Paste over currently selected text without yanking it
-map("v", "p", '"_dP', { silent = true })
+map("v", "p", '"_dp', { silent = true })
 
 --格式化
 vim.keymap.set('n', '<leader>=', 'mwggvG=`w', opts)
