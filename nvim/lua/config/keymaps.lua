@@ -105,7 +105,7 @@ local function map(mode, lhs, rhs, opts)
     end
 end
 -- Paste over currently selected text without yanking it
-map("v", "p", '"_dp', { silent = true })
+map("v", "p", '"_dP', { silent = true })
 
 --格式化
 vim.keymap.set('n', '<leader>=', 'mwggvG=`w', opts)
