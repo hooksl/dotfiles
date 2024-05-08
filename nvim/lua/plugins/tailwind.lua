@@ -1,6 +1,7 @@
 -- 折叠双引号：class="xxxxxxxxx",-->class="..."
 return {
     'razak17/tailwind-fold.nvim',
+    enabled = false,
     opts = {},
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     ft = {
