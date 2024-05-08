@@ -22,6 +22,7 @@ return {
                 "javascript",
                 "typescript",
                 "vimdoc",
+                "comment",
             },
             -- ensure_installed = {},
             highlight = { enable = true },
