@@ -33,8 +33,10 @@ vim.opt.hlsearch = false  -- do not highlight matches
 vim.opt.ignorecase = true -- ignore case in searches by default
 vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is entered
 
-vim.opt.cmdheight = 2
+-- TODO:命令行高为0时，普通模式下输入的命令被隐藏了，需要移到状态栏中显示
+vim.opt.cmdheight = 1
 
+--TODO:折叠符号
 -- folding
 -- vim.opt.foldenable = false
 -- vim.opt.foldmethod = 'expr'

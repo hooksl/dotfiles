@@ -24,12 +24,13 @@ return {
             max_path_length = 80,             -- Shorten the display path if length exceeds this threshold. Use 0 if don't want to shorten the path at all.
         })
         --  自动打开树
-        vim.cmd [[
-            augroup _open_nvim_tree
-            autocmd! * <buffer>
-            autocmd sessionloadpost * Neotree reveal
-            augroup end
-
-        ]]
+        --  TODO:打开neotree有数字列
+        -- vim.cmd [[
+        --     augroup _open_nvim_tree
+        --     autocmd! * <buffer>
+        --     autocmd sessionloadpost * Neotree reveal
+        --     augroup end
+        --
+        -- ]]
     end,
 }

@@ -11,6 +11,8 @@ return {
             require("todo-comments").jump_prev()
         end, { desc = "Previous todo comment" })
 
+        vim.api.nvim_set_keymap("n", "tl", "<Cmd>TodoLocList<CR>", { noremap = true, silent = true })
+
         require("todo-comments").setup({
             signs = true,      -- show icons in the signs column
             sign_priority = 8, -- sign priority
@@ -29,8 +31,6 @@ return {
                 NOTE = { icon = " ", color = "hint", alt = { "INFO" } },
                 TEST = { icon = "⏲ ", color = "test", alt = { "TESTING", "PASSED", "FAILED" } },
             },
-            -- TODO: 测试
-            -- FIX: 测试fix
             gui_style = {
                 fg = "NONE",       -- The gui style to use for the fg highlight group.
                 bg = "BOLD",       -- The gui style to use for the bg highlight group.
@@ -78,5 +78,6 @@ return {
             },
 
         })
-    end
+    end,
+
 }
