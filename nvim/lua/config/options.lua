@@ -18,13 +18,12 @@ vim.opt.expandtab = true -- tabs are spaces, mainly because of python
 
 -- UI config
 -- 显示左侧图标指示列
-vim.wo.signcolumn = "yes"
 vim.opt.number = true         -- show absolute number
 vim.opt.relativenumber = true -- add numbers to each line on the left side
 vim.opt.cursorline = true     -- highlight cursor line underneath the cursor horizontally
 vim.opt.splitbelow = false    -- open new vertical split bottom
 vim.opt.splitright = false    -- open new horizontal splits right
-vim.opt.showmode = false      -- we are experienced, wo don't need the "-- INSERT --" mode hint
+-- vim.opt.showmode = false      -- we are experienced, wo don't need the "-- INSERT --" mode hint
 --vim.opt.nowrap = true
 vim.wo.wrap = false
 -- Searching
@@ -36,9 +35,8 @@ vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is enter
 -- TODO:命令行高为0时，普通模式下输入的命令被隐藏了，需要移到状态栏中显示
 vim.opt.cmdheight = 1
 
---TODO:折叠符号
 -- folding
--- vim.opt.foldenable = false
+-- vim.opt.foldenable = true
 -- vim.opt.foldmethod = 'expr'
 -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.opt.foldlevel = 99
