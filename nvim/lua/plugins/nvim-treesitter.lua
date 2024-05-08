@@ -26,6 +26,11 @@ return {
             -- ensure_installed = {},
             highlight = { enable = true },
             indent = { enable = true },
+            -- fold={
+            --     enable =true,
+            --     foldmethod = "expr",
+            --     foldexpr='nvim_treesitter#foldexpr()'
+            -- }
             -- incremental_selection = {
             --     enable = true,
             --     keymaps = {
