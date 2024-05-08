@@ -44,7 +44,7 @@ return {
                 vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
                 vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
                 vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-w>", [[<C-\><C-n><C-w>]], { noremap = true, silent = true })
+                -- vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-w>", [[<C-\><C-n><C-w>]], { noremap = true, silent = true })
             end,
             -- function to run on closing the terminal
             on_close = function(term)
