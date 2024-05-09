@@ -25,7 +25,7 @@ return {
                 "comment",
             },
             highlight = { enable = true },
-            indent = { enable = true },
+            -- indent = { enable = true },
             -- fold={
             --     enable =true,
             --     foldmethod = "expr",
