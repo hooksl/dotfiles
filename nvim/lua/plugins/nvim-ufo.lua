@@ -3,11 +3,6 @@ return {
     dependencies = { 'kevinhwang91/promise-async' },
     enabled = true,
     config = function()
-        vim.o.foldcolumn = '0' -- '0' is not bad
-        -- vim.o.foldlevel = 3   -- Using ufo provider need a large value, feel free to decrease the value
-        -- vim.o.foldlevelstart = 99
-        vim.o.foldenable = true
-
         -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
         vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
         vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
@@ -15,7 +10,7 @@ return {
 
         local handler = function(virtText, lnum, endLnum, width, truncate)
             local newVirtText = {}
-            local suffix = (' 󰁂 %d '):format(endLnum - lnum)
+            local suffix = (' ... 󰁂 %d '):format(endLnum - lnum)
             local sufWidth = vim.fn.strdisplaywidth(suffix)
             local targetWidth = width - sufWidth
             local curWidth = 0
@@ -58,12 +53,5 @@ return {
         require('ufo').setup({
             fold_virt_text_handler = handler,
         })
-        --TODO:折叠符号未显示
-        -- require('ufo').setup({
-        --     fold_virt_text_handler = handler,
-        --     provider_selector = function(bufnr, filetype, buftype)
-        --         return { 'treesitter', 'indent' }
-        --     end
-        -- })
     end
 }
