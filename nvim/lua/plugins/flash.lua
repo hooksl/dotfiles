@@ -1,7 +1,7 @@
 return {
     "folke/flash.nvim",
     event = "VeryLazy",
-    ---@type Flash.Config
+    ----@type Flash.Config
     opts = {},
     keys = {
         {
@@ -57,7 +57,7 @@ return {
                 forward = true,
                 -- when `false`, find only matches in the given direction
                 wrap = true,
-                ---@type Flash.Pattern.Mode
+                -- -@type Flash.Pattern.Mode
                 -- Each mode will take ignorecase and smartcase into account.
                 -- * exact: exact match
                 -- * search: regular search
@@ -71,7 +71,7 @@ return {
                 -- behave like `incsearch`
                 incremental = false,
                 -- Excluded filetypes and custom window filters
-                ---@type (string|fun(win:window))[]
+                ----@type (string|fun(win:window))[]
                 exclude = {
                     "notify",
                     "cmp_menu",
@@ -144,12 +144,12 @@ return {
                 },
                 -- With `format`, you can change how the label is rendered.
                 -- Should return a list of `[text, highlight]` tuples.
-                ---@class Flash.Format
-                ---@field state Flash.State
-                ---@field match Flash.Match
-                ---@field hl_group string
-                ---@field after boolean
-                ---@type fun(opts:Flash.Format): string[][]
+                ----@class Flash.Format
+                ----@field state Flash.State
+                ----@field match Flash.Match
+                ----@field hl_group string
+                ----@field after boolean
+                ----@type fun(opts:Flash.Format): string[][]
                 format = function(opts)
                     return { { opts.match.label, opts.hl_group } }
                 end,
@@ -170,14 +170,14 @@ return {
             },
             -- action to perform when picking a label.
             -- defaults to the jumping logic depending on the mode.
-            ---@type fun(match:Flash.Match, state:Flash.State)|nil
+            ----@type fun(match:Flash.Match, state:Flash.State)|nil
             action = nil,
             -- initial pattern to use when opening flash
             pattern = "",
             -- When `true`, flash will try to continue the last search
             continue = false,
             -- Set config to a function to dynamically change the config
-            config = nil, ---@type fun(opts:Flash.Config)|nil
+            config = nil, ----@type fun(opts:Flash.Config)|nil
             -- You can override the default options for a specific mode.
             -- Use it with `require("flash").jump({mode = "forward"})`
 
