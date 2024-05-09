@@ -23,7 +23,8 @@ return {
                 'html',
                 'cssls',
                 'emmet_ls',
-                'tsserver'
+                'tsserver',
+                'marksman'
             },
         })
     end,

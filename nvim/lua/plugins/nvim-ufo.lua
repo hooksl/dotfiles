@@ -4,6 +4,7 @@ return {
     enabled = true,
     config = function()
         -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+        vim.cmd([[ set nofoldenable]])
         vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
         vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
         vim.api.nvim_set_keymap("n", "<TAB>", "za", { noremap = true, silent = true })
