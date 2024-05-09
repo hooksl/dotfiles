@@ -35,9 +35,15 @@ vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is enter
 -- TODO:命令行高为0时，普通模式下输入的命令被隐藏了，需要移到状态栏中显示
 vim.opt.cmdheight = 1
 
+-- vim.cmd([[ set nofoldenable]])
 -- folding
 -- vim.opt.foldenable = true
 -- vim.opt.foldmethod = 'expr'
 -- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- vim.opt.foldlevel = 99
 
+-- vim.cmd([[ set nofoldenable]])
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+-- vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+-- vim.o.foldlevelstart = 99

@@ -1,7 +1,7 @@
 return {
      "nvim-neo-tree/neo-tree.nvim",
     branch = "v3.x",
-    requires = { 
+    requires = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
       "MunifTanjim/nui.nvim",
@@ -308,6 +308,6 @@ return {
         }
       })
 
-      vim.cmd([[nnoremap \ :Neotree reveal<cr>]])
+        vim.api.nvim_set_keymap("n", "<leader>e", "<Cmd>Neotree reveal<CR>", { noremap = true, silent = true })
     end
 }

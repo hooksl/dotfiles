@@ -7,7 +7,7 @@ return {
     config = function()
         local builtin = require("statuscol.builtin")
         vim.o.foldcolumn = '1' -- '0' is not bad
-        vim.o.foldenable = true
+        -- vim.o.foldenable = true
         vim.o.fillchars = [[foldopen:,foldsep: ,foldclose:,]]
 
         -- 不显示折叠行高亮
