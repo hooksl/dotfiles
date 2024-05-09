@@ -36,7 +36,7 @@ return {
                 },
             },
             messages = {
-                -- NOTE: If you enable messages, then the cmdline is enabled automatically.
+                -- NOTE If you enable messages, then the cmdline is enabled automatically.
                 -- This is a current Neovim limitation.
                 enabled = false,             -- enables the Noice messages UI
                 view = "notify",             -- default view for messages

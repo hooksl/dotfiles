@@ -2,7 +2,6 @@ return {
     'Shatur/neovim-session-manager',
     dependencies = {
         { 'nvim-lua/plenary.nvim', opt = true },
-        "nvim-neo-tree/neo-tree.nvim",
     },
     config = function()
         local Path = require('plenary.path')
@@ -25,6 +24,7 @@ return {
         })
         --  自动打开树
         --  TODO:打开neotree有数字列
+        --  
         -- vim.cmd [[
         --     augroup _open_nvim_tree
         --     autocmd! * <buffer>

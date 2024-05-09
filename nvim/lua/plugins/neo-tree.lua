@@ -5,7 +5,7 @@ return {
         "nvim-lua/plenary.nvim",
         "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
         "MunifTanjim/nui.nvim",
-        "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
+        -- "3rd/image.nvim",              -- Optional image support in preview window: See `# Preview Mode` for more information
     },
     keys = {
         { "<F3>", "<cmd>Neotree toggle<cr>", desc = "打开/关闭树" },
@@ -13,9 +13,6 @@ return {
         { "<leader>e", "<cmd>Neotree reveal<cr>", desc = "打开/关闭树" },
     },
     config = function()
-        -- unless you are still migrating, remove the deprecated commands from v1.x
-        vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
-
         -- if you want icons for diagnostic errors, you'll need to define them somewhere:
         vim.fn.sign_define("diagnosticsignerror",
             { text = " ", texthl = "diagnosticsignerror" })
@@ -25,8 +22,6 @@ return {
             { text = " ", texthl = "diagnosticsigninfo" })
         vim.fn.sign_define("diagnosticsignhint",
             { text = "", texthl = "diagnosticsignhint" })
-        -- note: this is changed from v1.x, which used the old style of highlight groups
-        -- in the form "lspdiagnosticssignwarning"
 
         require("neo-tree").setup({
             document_symbols = {
@@ -275,6 +270,5 @@ return {
                 }
             }
         })
-
     end,
 }

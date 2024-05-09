@@ -1,5 +1,9 @@
 return {
     "luukvbaal/statuscol.nvim",
+    enabled = true,
+    dependencies = {
+        "lewis6991/gitsigns.nvim",
+    },
     config = function()
         local builtin = require("statuscol.builtin")
         vim.o.foldcolumn = '1' -- '0' is not bad
@@ -16,18 +20,38 @@ return {
         require("statuscol").setup({
             -- configuration goes here, for example:
             relculright = true,
+            ft_ignore = { "help", "neo-tree", "toggleterm" },
             segments = {
-                { text = { builtin.foldfunc }, click = "v:lua.ScFa" },
                 {
-                    sign = { name = { "Diagnostic" }, maxwidth = 2, auto = true },
+                    sign = { name = { ".*" }, maxwidth = 1, colwidth = 1, auto = true, wrap = true },
                     click = "v:lua.ScSa"
+                },
+                {
+                    sign = { namespace = { "diagnostic" }, maxwidth = 1,auto=false},
+                    click = "v:lua.ScSa"
+                },
+                {
+                    sign = { namespace = { 'gitsigns*' }, maxwidth = 1, colwidth = 2, auto = false },
+                    click = 'v:lua.ScSa',
                 },
                 { text = { builtin.lnumfunc }, click = "v:lua.ScLa", },
-                {
-                    sign = { name = { ".*" }, maxwidth = 2, colwidth = 1, auto = true, wrap = true },
-                    click = "v:lua.ScSa"
-                },
+                { text = { builtin.foldfunc," " }, click = "v:lua.ScFa" },
             }
+
+            -- segments = {
+            --     -- { sign = { name = { 'Dap' }, maxwidth = 1, auto = false }, click = 'v:lua.ScSa' },
+            --     { sign = { name = { 'todo*' }, maxwidth = 1 } },
+            --     {
+            --         sign = { namespace = { 'diagnostic' }, maxwidth = 1, auto = false },
+            --         click = 'v:lua.ScSa',
+            --     },
+            --     {
+            --         sign = { namespace = { 'gitsigns*' }, maxwidth = 1, colwidth = 2, auto = false },
+            --         click = 'v:lua.ScSa',
+            --     },
+            --     { text = { builtin.lnumfunc, ' ' }, click = 'v:lua.ScLa' },
+            --     { text = { builtin.foldfunc, ' ' },  click = 'v:lua.ScFa' },
+            -- },
         })
     end,
 }
