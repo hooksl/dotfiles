@@ -54,15 +54,6 @@ return {
                 html ={}
             },
         })
-        --FIX:没有开启lsp的文件会自动启动折叠
-        -- require('ufo').setup({
-        --     -- fold_virt_text_handler = handler,
-        -- })
-        -- require('ufo').setup({
-        --     provider_selector = function(bufnr, filetype, buftype)
-        --         return ''
-        --     end
-        -- })
     end
 }
 -- {
