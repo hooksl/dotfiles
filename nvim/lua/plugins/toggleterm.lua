@@ -33,17 +33,23 @@ return {
 
         local T_ter   = require('toggleterm.terminal').Terminal
         local ter_opt = T_ter:new({
-            -- cmd = '',
+            -- dir = "git_dir",
+            -- cmd = "ls",
             -- direction = 'horizontal',
             -- function to run on opening the terminal
             on_open = function(term)
                 -- vim.cmd("startinsert!")
                 vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
                 vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd h<CR>]], { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", [[<Cmd>wincmd h<CR>]],
+                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]],
+                    { noremap = true, silent = true })
+                --TODO:改用上一个窗口，up窗口会跳到目录树
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>TmuxNavigatePrevious<CR>]],
+                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd h<CR>]],
+                    { noremap = true, silent = true })
                 -- vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-w>", [[<C-\><C-n><C-w>]], { noremap = true, silent = true })
             end,
             -- function to run on closing the terminal
