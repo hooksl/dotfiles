@@ -100,6 +100,10 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
         }
+        lspconfig.pyright.setup {
+            on_attach = on_attach,
+            capabilities = capabilities,
+        }
         lspconfig.volar.setup {
             on_attach = on_attach,
             capabilities = capabilities,

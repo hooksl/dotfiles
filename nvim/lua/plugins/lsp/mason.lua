@@ -24,7 +24,8 @@ return {
                 'cssls',
                 'emmet_ls',
                 'tsserver',
-                'marksman'
+                'marksman',
+                "pyright"
             },
         })
     end,
