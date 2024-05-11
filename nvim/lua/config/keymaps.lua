@@ -34,13 +34,12 @@ vim.keymap.set('i', '<C-l>', '<Right>', opts)
 -- noremap <silent> {Right-Mapping} :<C-U>TmuxNavigateRight<cr>
 -- noremap <silent> {Previous-Mapping} :<C-U>TmuxNavigatePrevious<cr>
 
-vim.keymap.set('n', '<C-p>', '<Plug>MarkdownPreviewToggle', opts)
 -- Resize with arrows
 -- delta: 2 lines
-vim.keymap.set('n', '_', ':resize -2<CR>', opts)
-vim.keymap.set('n', '+', ':resize +2<CR>', opts)
-vim.keymap.set('n', '<', ':vertical resize -2<CR>', opts)
-vim.keymap.set('n', '>', ':vertical resize +2<CR>', opts)
+vim.keymap.set('n', '<c-Down>', ':resize -2<CR>', opts)
+vim.keymap.set('n', '<c-Up>', ':resize +2<CR>', opts)
+vim.keymap.set('n', '<c-Left>', ':vertical resize -2<CR>', opts)
+vim.keymap.set('n', '<c-Right>', ':vertical resize +2<CR>', opts)
 
 -- exit
 vim.keymap.set('n', 'q', ':BufferLineCyclePrev<CR>:bd #<CR>', opts)
