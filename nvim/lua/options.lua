@@ -35,6 +35,8 @@ vim.opt.smartcase = true  -- but make it case sensitive if an uppercase is enter
 -- TODO:命令行高为0时，普通模式下输入的命令被隐藏了，需要移到状态栏中显示
 vim.opt.cmdheight = 1
 
+vim.opt.laststatus = 3
+vim.opt.splitkeep = "screen"
 -- vim.cmd([[ set nofoldenable]])
 -- folding
 -- vim.opt.foldenable = true
