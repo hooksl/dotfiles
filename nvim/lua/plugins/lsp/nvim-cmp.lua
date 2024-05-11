@@ -45,13 +45,9 @@ return {
             },
             window = {
                 completion = cmp.config.window.bordered({
-                    winhighlight = "Normal:transparentBG,FloatBorder:transparentBG,Search:None",
                 }),
                 documentation = cmp.config.window.bordered({
-                    winhighlight =
-                    "Normal:transparentBG,FloatBorder:transparentBG,Search:None"
                 }),
-
             },
             mapping = cmp.mapping.preset.insert({
                 ['<C-u>'] = cmp.mapping.scroll_docs(-4),
