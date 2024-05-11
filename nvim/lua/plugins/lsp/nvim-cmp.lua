@@ -9,6 +9,7 @@ return {
             event = { "VimEnter" },
         },
         -- Code snippet engine
+        -- TODO:加入友好片段
         {
             "L3MON4D3/LuaSnip",
             'saadparwaiz1/cmp_luasnip',

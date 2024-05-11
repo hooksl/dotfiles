@@ -9,11 +9,6 @@ local opts = {
 -----------------
 -- Hint: see `:h vim.map.set()`
 -- Better window navigation
-vim.keymap.set('n', '<C-h>', ':<C-U>TmuxNavigateLeft<cr>', opts)
-vim.keymap.set('n', '<C-j>', ':<C-U>TmuxNavigateDown<cr>', opts)
-vim.keymap.set('n', '<C-k>', ':<C-U>TmuxNavigateUp<cr>', opts)
-vim.keymap.set('n', '<C-l>', ':<C-U>TmuxNavigateRight<cr>', opts)
--- vim.keymap.set('n', '<C-w>', ':<C-U>TmuxNavigatePrevious<cr>', opts)
 vim.keymap.set('i', '<C-h>', '<Left>', opts)
 vim.keymap.set('i', '<C-j>', '<Down>', opts)
 vim.keymap.set('i', '<C-k>', '<Up>', opts)
@@ -40,7 +35,6 @@ vim.keymap.set('n', '<c-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<c-Right>', ':vertical resize +2<CR>', opts)
 
 -- exit
-vim.keymap.set('n', 'q', ':BufferLineCyclePrev<CR>:bd #<CR>', opts)
 -- save
 vim.keymap.set('n', '<c-s>', ':w<CR>', opts)
 -- 刷新文件
@@ -116,22 +110,6 @@ vim.keymap.set('v', 'v', 'vggVG', opts)
 -- vim.keymap.set({ 'v', 'n' }, '<c-f>', fl.trans, opts)
 
 -- BufferLine
-vim.keymap.set('n', '<leader>bp', ':BufferLineTogglePin<CR>', opts)
-vim.keymap.set('n', '<leader>bdl', ':BufferLineCloseRight<CR>', opts)
-vim.keymap.set('n', '<leader>bdh', ':BufferLineCloseLeft<CR>', opts)
-vim.keymap.set('n', '<leader><leader>', ':BufferLinePick<CR>', opts)
-vim.keymap.set('n', '<leader>bdd', ':BufferLineCloseOthers<CR>', opts)
-
-vim.keymap.set('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>', opts)
-vim.keymap.set('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>', opts)
-vim.keymap.set('n', '<leader>3', ':BufferLineGoToBuffer 3<CR>', opts)
-vim.keymap.set('n', '<leader>4', ':BufferLineGoToBuffer 4<CR>', opts)
-vim.keymap.set('n', '<leader>5', ':BufferLineGoToBuffer 5<CR>', opts)
-vim.keymap.set('n', '<leader>6', ':BufferLineGoToBuffer 6<CR>', opts)
-vim.keymap.set('n', '<leader>7', ':BufferLineGoToBuffer 7<CR>', opts)
-vim.keymap.set('n', '<leader>8', ':BufferLineGoToBuffer 8<CR>', opts)
-vim.keymap.set('n', '<leader>9', ':BufferLineGoToBuffer 9<CR>', opts)
-vim.keymap.set('n', '<leader>$', ':BufferLineGoToBuffer -1<CR>', opts)
 
 
 -- toggleterm
