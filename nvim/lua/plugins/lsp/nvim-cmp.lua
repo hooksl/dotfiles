@@ -9,15 +9,16 @@ return {
             event = { "VimEnter" },
         },
         -- Code snippet engine
-        -- TODO:加入友好片段
         {
             "L3MON4D3/LuaSnip",
             'saadparwaiz1/cmp_luasnip',
+            "rafamadriz/friendly-snippets", --代码段合集
+            "f3fora/cmp-spell",             --nvim-cmp 的拼写源基于 vim 的拼写建议
         },
-        "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
-        "hrsh7th/cmp-buffer",   -- buffer auto-completion
-        "hrsh7th/cmp-path",     -- path auto-completion
-        "hrsh7th/cmp-cmdline",  -- cmdline auto-completion
+        "hrsh7th/cmp-nvim-lsp",             -- lsp auto-completion
+        "hrsh7th/cmp-buffer",               -- buffer auto-completion
+        "hrsh7th/cmp-path",                 -- path auto-completion
+        "hrsh7th/cmp-cmdline",              -- cmdline auto-completion
     },
     config = function()
         local has_words_before = function()
@@ -27,6 +28,8 @@ return {
                 vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
 
+        vim.opt.spell = true
+        vim.opt.spelllang = { "en_us" }
         local luasnip = require("luasnip")
         local cmp = require("cmp")
         local lspkind = require("lspkind")
@@ -112,13 +115,23 @@ return {
 
             -- Set source precedence
             sources = cmp.config.sources({
-                    { name = 'luasnip' },  -- 优先使用luasnip，没有匹配到的话才用下面的源
+                    { name = 'luasnip' }, -- 优先使用luasnip，没有匹配到的话才用下面的源
                 },
                 {
                     -- { name = 'nvim_lsp', keyword_length = 2 },
                     { name = 'nvim_lsp' },
                     { name = 'buffer' },
                     { name = 'path' },
+                    {
+                        name = "spell",
+                        option = {
+                            keep_all_entries = false,
+                            enable_in_context = function()
+                                return true
+                            end,
+                            preselect_correct_word = true,
+                        },
+                    },
                 })
         })
         cmp.setup.cmdline({ '/', '?' }, {

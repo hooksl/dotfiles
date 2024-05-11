@@ -24,7 +24,7 @@ vim.opt.cursorline = true     -- highlight cursor line underneath the cursor hor
 vim.opt.splitbelow = false    -- open new vertical split bottom
 vim.opt.splitright = false    -- open new horizontal splits right
 -- vim.opt.showmode = false      -- we are experienced, wo don't need the "-- INSERT --" mode hint
---vim.opt.nowrap = true
+-- vim.opt.nowrap = true
 vim.wo.wrap = false
 -- Searching
 vim.opt.incsearch = true  -- search as characters are entered
