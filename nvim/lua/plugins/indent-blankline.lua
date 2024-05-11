@@ -5,8 +5,8 @@ return {
     config = function()
         require("ibl").setup {
             indent = {
-                char ={"","┊","┊","┊"},
-                tab_char = { "a", "b", "c","d" },
+                char ={" ","┊","┊","┊","┊"},
+                tab_char = { "a","b","c","d","e" },
             },
             scope = {
                 -- 关掉函数上的横线
