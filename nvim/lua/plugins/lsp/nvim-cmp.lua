@@ -43,6 +43,10 @@ return {
                     require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
                 end,
             },
+            -- 自动选中第一项
+            completion = {
+                completeopt = 'menu,menuone,noinsert', -- sudgeseted in issue #209
+            },
             window = {
                 completion = cmp.config.window.bordered({
                 }),

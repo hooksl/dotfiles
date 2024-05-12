@@ -7,7 +7,6 @@ vim.opt.termguicolors = true
 vim.opt.signcolumn = "yes"
 
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.mouse = 'a'               -- allow the mouse to be used in Nvim
 
 -- Tab
@@ -23,8 +22,7 @@ vim.opt.relativenumber = true -- add numbers to each line on the left side
 vim.opt.cursorline = true     -- highlight cursor line underneath the cursor horizontally
 vim.opt.splitbelow = false    -- open new vertical split bottom
 vim.opt.splitright = false    -- open new horizontal splits right
--- vim.opt.showmode = false      -- we are experienced, wo don't need the "-- INSERT --" mode hint
--- vim.opt.nowrap = true
+vim.opt.showmode = false      -- we are experienced, wo don't need the "-- INSERT --" mode hint
 vim.wo.wrap = false
 -- Searching
 vim.opt.incsearch = true  -- search as characters are entered
