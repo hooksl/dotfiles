@@ -19,7 +19,7 @@ return {
         require("statuscol").setup({
             -- configuration goes here, for example:
             relculright = true,
-            ft_ignore = { "help", "neo-tree", "toggleterm" },
+            ft_ignore = { "help", "neo-tree", "toggleterm","aerial","sagaoutline" },
             segments = {
                 {
                     sign = { name = { ".*" }, maxwidth = 1, colwidth = 1, auto = true, wrap = true },
