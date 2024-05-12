@@ -47,6 +47,16 @@ return {
             -- any other neo-tree windows
             "neo-tree",
         },
+        right={
+            {
+                title = "Outline",
+                ft = "sagaoutline",
+            },
+            {
+                title = "Aerial",
+                ft = "aerial",
+            },
+        },
         -- edgebar animations
         animate = {
             enabled = false,
