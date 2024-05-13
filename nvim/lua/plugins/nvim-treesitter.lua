@@ -23,6 +23,7 @@ return {
                 "typescript",
                 "vimdoc",
                 "comment",
+                "regex"
             },
             highlight = { enable = true },
             -- indent = { enable = true },

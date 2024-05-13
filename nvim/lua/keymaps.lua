@@ -22,7 +22,9 @@ vim.keymap.set('n', '<c-Right>', ':vertical resize +2<CR>', opts)
 
 -- exit
 -- save
-vim.keymap.set('n', '<c-s>', ':w<CR>', opts)
+-- TODO:opts属性silent=true noice会报错
+vim.keymap.set('n', '<c-s>', ':w<CR>')
+
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
 -- 切换窗口
