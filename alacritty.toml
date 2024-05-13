@@ -6,7 +6,8 @@ args = ['--login']
 program = "/usr/bin/zsh"
 
 [cursor]
-style = "Beam"
+style = {shape ="Beam",blinking = "Never"}
+vi_mode_style ={shape ="Beam",blinking = "Never"}
 
 [font]
 size = 13.0
@@ -16,17 +17,16 @@ family = "JetBrainsMono Nerd Font"
 # family = "Hack Nerd Font"
 
 [window]
-# startup_mode = "Windowed"
-# startup_mode="Maximized"
-# padding={ x=5,y=4 }
-# class={ instance="Alacritty",general="Alacritty"}
-# resize_increments=true
-# dynamic_padding = false
-# option_as_alt="OnlyRight"
-decorations = 'none'
+# position = { x = 0, y = 0 }
+# padding = { x = 3, y = 3 }
+dimensions={columns=180,lines=60}
+dynamic_padding = true
 opacity = 0.99
 blur = true
-dimensions={columns=180,lines=60}
+decorations = 'none'
+
+# opacity = 1
+# blur = true
 # [window.padding]
 # x = 6
 # y = 10

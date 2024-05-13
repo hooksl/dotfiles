@@ -43,10 +43,11 @@ return {
                 lualine_c = { 'filename' },
                 lualine_x = {
                     -- { "diagnostics", sources = { "nvim_lsp" }, symbols = { error = " ", warn = " ", info = " ", hint = " " } },
+                    "%S",
                     clients_lsp,
                     'encoding',
                     'fileformat',
-                    'filetype'
+                    'filetype',
                 },
                 lualine_y = { 'progress' },
                 lualine_z = { 'location' }

@@ -9,8 +9,19 @@ vim.o.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
--- TODO:命令行高为0时，普通模式下输入的命令被隐藏了，需要移到状态栏中显示
-vim.opt.cmdheight = 1
+
+-- 右下角显示的jkhl等移到lualine
+-- sections = {
+--     ...
+--     lualine_x = {
+--         '%S', ...
+--     },
+--     ...
+-- }
+vim.opt.cmdheight = 0
+vim.o.showcmdloc = "statusline"
+vim.o.showcmd = true
+
 -- 补全最多显示10行
 vim.o.pumheight = 15
 
