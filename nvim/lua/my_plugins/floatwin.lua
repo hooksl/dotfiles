@@ -79,7 +79,7 @@ end
 function M.mappings()
     vim.keymap.set({ 'n', 'v' }, 'tt', function() M.floatwin(" ") end, opts)
     vim.keymap.set({ 'n', 'v' }, 'to', function() M.floatwin("onlive") end, opts)
-    vim.keymap.set({ 'n', 'v' }, 'tp', function() M.floatwin("sp") end, opts)
+    vim.keymap.set({ 'n', 'v' }, 'ts', function() M.floatwin("sp") end, opts)
 end
 
 return M

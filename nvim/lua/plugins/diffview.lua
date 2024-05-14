@@ -16,10 +16,6 @@ return {
         vim.keymap.set("n", "<leader>dc", "<cmd>DiffviewClose<CR>", opts)
         vim.keymap.set('n', '<leader>do', '<cmd>diffoff<CR>', opts)
         vim.keymap.set('n', '<leader>dt', '<cmd>diffthis<CR>', opts)
-        vim.keymap.set('n', '<leader>dn', '<cmd>tabn<CR>', opts)
-        vim.keymap.set('n', '<leader>dp', '<cmd>tabp<CR>', opts)
-        vim.keymap.set('n', '<leader>dc', '<cmd>tabc<CR>', opts)
-
 
         require("diffview").setup({
             diff_binaries = false,    -- Show diffs for binaries

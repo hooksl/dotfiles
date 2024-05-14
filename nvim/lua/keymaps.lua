@@ -20,7 +20,11 @@ vim.keymap.set('n', '<c-Up>', ':resize +2<CR>', opts)
 vim.keymap.set('n', '<c-Left>', ':vertical resize -2<CR>', opts)
 vim.keymap.set('n', '<c-Right>', ':vertical resize +2<CR>', opts)
 
--- exit
+-- tab
+vim.keymap.set('n', 'tn', '<cmd>tabn<CR>', opts)
+vim.keymap.set('n', 'tp', '<cmd>tabp<CR>', opts)
+vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
+
 -- save
 -- TODO:opts属性silent=true noice会报错
 vim.keymap.set('n', '<c-s>', ':w<CR>')
