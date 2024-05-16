@@ -4,7 +4,7 @@ return {
     enabled = true,
     config = function()
         vim.api.nvim_set_keymap("n", "<TAB>", "za", { noremap = true, silent = true })
-
+        vim.cmd([[ set nofoldenable]])
         local handler = function(virtText, lnum, endLnum, width, truncate)
             local newVirtText = {}
             local suffix = (' 󰇘 󰁂 %d '):format(endLnum - lnum)
@@ -52,7 +52,7 @@ return {
             close_fold_kinds_for_ft = {
                 default = {},
                 html ={},
-                lua ={}
+                lua ={},
             },
         })
     end
