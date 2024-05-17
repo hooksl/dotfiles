@@ -79,22 +79,10 @@ return {
             },
             capabilities = capabilities,
         })
-        lspconfig.cssls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        }
         lspconfig.marksman.setup {
             on_attach = on_attach,
             capabilities = capabilities,
             filetypes ={ "markdown", "markdown.mdx" }
-        }
-        lspconfig.emmet_ls.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
-        }
-        lspconfig.html.setup {
-            on_attach = on_attach,
-            capabilities = capabilities,
         }
         lspconfig.tsserver.setup {
             on_attach = on_attach,
