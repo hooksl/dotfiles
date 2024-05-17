@@ -22,6 +22,8 @@ return {
                 'volar',
                 'html',
                 'cssls',
+                "eslint",
+                "tailwindcss",
                 'emmet_ls',
                 'tsserver',
                 'marksman',
