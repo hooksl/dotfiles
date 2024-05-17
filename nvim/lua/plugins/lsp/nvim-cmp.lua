@@ -15,10 +15,32 @@ return {
             "rafamadriz/friendly-snippets", --代码段合集
             "f3fora/cmp-spell",             --nvim-cmp 的拼写源基于 vim 的拼写建议
         },
-        "hrsh7th/cmp-nvim-lsp",             -- lsp auto-completion
-        "hrsh7th/cmp-buffer",               -- buffer auto-completion
-        "hrsh7th/cmp-path",                 -- path auto-completion
-        "hrsh7th/cmp-cmdline",              -- cmdline auto-completion
+        {
+            "luckasRanarison/tailwind-tools.nvim",
+            dependencies = { "nvim-treesitter/nvim-treesitter" },
+            opts = {
+                document_color = {
+                    enabled = true, -- can be toggled by commands
+                    kind = "inline", -- "inline" | "foreground" | "background"
+                    inline_symbol = " ", -- only used in inline mode
+                    debounce = 200, -- in milliseconds, only applied in insert mode
+                },
+                conceal = {
+                    enabled = false, -- can be toggled by commands
+                    min_length = nil, -- only conceal classes exceeding the provided length
+                    symbol = "󱏿", -- only a single character is allowed
+                    highlight = { -- extmark highlight options, see :h 'highlight'
+                        fg = "#38BDF8",
+                    },
+                },
+                custom_filetypes = {} -- see the extension section to learn how it works
+            },
+        },
+        "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
+        "hrsh7th/cmp-buffer",   -- buffer auto-completion
+        "hrsh7th/cmp-path",     -- path auto-completion
+        "hrsh7th/cmp-cmdline",  -- cmdline auto-completion
+        "luckasRanarison/tailwind-tools.nvim",
     },
     config = function()
         local has_words_before = function()
@@ -107,6 +129,7 @@ return {
 
                     before = function(entry, vim_item)
                         -- Source 显示提示来源
+                        vim_item = require("tailwind-tools.cmp").lspkind_format(entry, vim_item)
                         vim_item.menu = "[" .. string.upper(entry.source.name) .. "]"
                         return vim_item
                     end
@@ -156,30 +179,4 @@ return {
             }),
         })
     end
-    -- 'neovim/nvim-lspconfig',
-    -- 'hrsh7th/cmp-nvim-lsp',
-    -- 'hrsh7th/cmp-buffer',
-    -- 'hrsh7th/cmp-path',
-    -- 'hrsh7th/cmp-cmdline',
-    -- 'hrsh7th/nvim-cmp',
-    --
-    -- --For vsnip users.,-- 代码片段
-    -- 'hrsh7th/cmp-vsnip',
-    -- 'hrsh7th/vim-vsnip',
-    --
-    -- --For luasnip users.,
-    -- 'L3MON4D3/LuaSnip',
-    -- 'saadparwaiz1/cmp_luasnip',
-    -- --
-    -- -- --For ultisnips users.,
-    -- -- 'SirVer/ultisnips',
-    -- -- 'quangnguyen30192/cmp-nvim-ultisnips',
-    -- --
-    -- -- --For snippy users.,
-    -- -- 'dcampos/nvim-snippy',
-    -- -- 'dcampos/cmp-snippy',
-
-    -- config = function()
-    --     require("config.nvim-cmp")
-    -- end,
 }
