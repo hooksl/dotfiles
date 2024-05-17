@@ -6,21 +6,18 @@ return {
         require("ibl").setup {
             indent = {
                 -- char = { "┊" },
-                char ={" ","┊","┊","┊","┊"},
-                tab_char = { "a","b","c","d","e" },
+                char = { " ", "┊", "┊", "┊", "┊" },
+                tab_char = { "a", "b", "c", "d", "e" },
             },
             scope = {
                 -- 关掉函数上的横线
                 enabled = false,
             },
-            whitespace ={
-               -- highlight = { "Function", "Label" },
-               highlight = { "Function" },
-               remove_blankline_trail = true,
-            }
-            -- for example, context is off by default, use this to turn it on
-            -- show_current_context = true,
-            -- show_current_context_start = true,
+            whitespace = {
+                -- highlight = { "Function", "Label" },
+                highlight = { "Function" },
+                remove_blankline_trail = true,
+            },
         }
     end,
 }
