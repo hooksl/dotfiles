@@ -41,17 +41,16 @@ vim.cmd([[
 unmap <c-w><c-d>
 unmap <c-w>d
 ]])
-vim.keymap.set('n', '<c-w>', ':buffer #<cr>', opts)
+vim.keymap.set('n', '<c-w>', '<cmd>buffer #<cr>', opts)
+vim.keymap.set('n', 'n', '<cmd>set hlsearch<cr>n', opts)
+vim.keymap.set('n', 'N', '<cmd>set hlsearch<cr>N', opts)
+vim.keymap.set('n', '/', '<cmd>set hlsearch<cr>/', {silent=false})
+vim.keymap.set('n', '?', '<cmd>set hlsearch<cr>?', {silent=false})
+vim.keymap.set('n', '<leader>w', '*<cmd>set hlsearch<cr>', opts)
+vim.keymap.set('n', '<esc>', '<cmd>nohl<cr>', opts)
 
 vim.cmd([[
 set nohlsearch
-nnoremap <silent> <esc> :nohl<cr>
-noremap <silent> n :set hlsearch<cr>n
-noremap <silent> N :set hlsearch<cr>N
-noremap / :set hlsearch<cr>/
-noremap ? :set hlsearch<cr>?
-" noremap <silent> * *:set hlsearch<cr>
-noremap <silent> <leader>w *:set hlsearch<cr>
 
 nnoremap <expr><leader>r Sh()
 
