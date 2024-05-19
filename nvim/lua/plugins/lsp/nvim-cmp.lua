@@ -35,12 +35,20 @@ return {
                 },
                 custom_filetypes = {} -- see the extension section to learn how it works
             },
+            config = function()
+                require("tailwind-tools").setup({
+                    -- your configuration
+                })
+                vim.api.nvim_set_keymap("n", "<leader>tt", "<Cmd>TailwindConcealToggle<CR>",
+                    { noremap = true, silent = true })
+                vim.api.nvim_set_keymap("n", "<leader>tc", "<Cmd>TailwindColorToggle<CR>",
+                    { noremap = true, silent = true })
+            end
         },
         "hrsh7th/cmp-nvim-lsp", -- lsp auto-completion
         "hrsh7th/cmp-buffer",   -- buffer auto-completion
         "hrsh7th/cmp-path",     -- path auto-completion
         "hrsh7th/cmp-cmdline",  -- cmdline auto-completion
-        "luckasRanarison/tailwind-tools.nvim",
     },
     config = function()
         local has_words_before = function()
