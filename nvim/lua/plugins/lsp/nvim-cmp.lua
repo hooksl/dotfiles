@@ -80,10 +80,10 @@ return {
                 ['<C-d>'] = cmp.mapping.scroll_docs(4),
                 -- ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
                 -- ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-                ['<esc>'] = cmp.mapping({
-                    i = cmp.mapping.abort(),
-                    c = cmp.mapping.close(),
-                }),
+                -- ['<esc>'] = cmp.mapping({
+                --     i = cmp.mapping.abort(),
+                --     c = cmp.mapping.close(),
+                -- }),
                 -- Use <C-k/j> to switch in items
                 -- ['<C-k>'] = cmp.mapping.select_prev_item(),
                 -- ['<C-j>'] = cmp.mapping.select_next_item(),
