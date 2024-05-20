@@ -5,7 +5,6 @@ vim.g.loaded_netrwPlugin = 1
 -- 外观
 vim.opt.signcolumn = "yes"
 vim.o.background = "dark"
-vim.o.termguicolors = true
 vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
