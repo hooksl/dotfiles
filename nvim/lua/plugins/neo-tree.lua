@@ -11,7 +11,7 @@ return {
         require("neo-tree").setup({
             -- close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
             -- -- popup_border_style = "rounded",
-            enable_git_status = false,
+            enable_git_status = true,
             enable_diagnostics = false,
             -- enable_normal_mode_for_inputs = false,                             -- Enable normal mode for input dialogs.
             -- open_files_do_not_replace_types = { "terminal", "trouble", "qf" }, -- when opening files, do not use windows containing these filetypes or buftypes
