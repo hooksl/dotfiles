@@ -1,14 +1,10 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    -- dependencies = "windwp/nvim-ts-autotag",
     build = function()
         require("nvim-treesitter.install").update({ with_sync = true })
     end,
     config = function()
         require 'nvim-treesitter.configs'.setup {
-            -- autotag = {
-            --     enable = true,
-            -- },
             ensure_installed = { "vue",
                 "html",
                 "css",
@@ -31,18 +27,18 @@ return {
                 "tsx"
             },
             highlight = { enable = true },
-            -- indent = { enable = true },
-            -- fold={
-            --     enable =true,
-            --     foldmethod = "expr",
-            --     foldexpr='nvim_treesitter#foldexpr()'
-            -- },
+            -- -- indent = { enable = true },
+            -- -- fold={
+            -- --     enable =true,
+            -- --     foldmethod = "expr",
+            -- --     foldexpr='nvim_treesitter#foldexpr()'
+            -- -- },
             incremental_selection = {
                 enable = true,
                 keymaps = {
                     init_selection = "<CR>", -- set to `false` to disable one of the mappings
                     node_incremental = "<CR>",
-                    scope_incremental = "<CR>",
+                    -- scope_incremental = "<CR>",
                     node_decremental = "<BS>",
                 },
             },

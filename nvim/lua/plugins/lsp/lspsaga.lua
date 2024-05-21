@@ -14,7 +14,8 @@ return {
                 auto_preview = false
             },
             lightbulb = {
-                enable = false, -- 关闭灯塔                enable_in_insert = true,
+                enable = false, -- 关闭灯塔
+                enable_in_insert = true,
                 sign = true,
                 sign_priority = 40,
                 virtual_text = true,
@@ -75,7 +76,7 @@ return {
         lspconfig.marksman.setup {
             on_attach = on_attach,
             capabilities = capabilities,
-            filetypes ={ "markdown", "markdown.mdx" }
+            filetypes = { "markdown", "markdown.mdx" }
         }
         lspconfig.tsserver.setup {
             on_attach = on_attach,
@@ -97,7 +98,7 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
             -- filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
-            filetypes = {"vue"},
+            filetypes = { "vue" },
             init_options = {
                 typescript = {
                     -- tsdk = '/path/to/.npm/lib/node_modules/typescript/lib'
@@ -110,26 +111,22 @@ return {
             },
 
         }
-
-        local signs = {
-            { name = "DiagnosticSignError", text = "" },
-            { name = "DiagnosticSignWarn", text = "" },
-            { name = "DiagnosticSignHint", text = "" },
-            { name = "DiagnosticSignInfo", text = "" },
-        }
-        for _, sign in ipairs(signs) do
-            vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = "" })
-        end
         local config = {
-            -- disable virtual text
+            -- 禁止使用文本提示
             virtual_text = false,
-            -- show signs
-            signs = {
-                active = signs,
+            underline = {
+                severity = { min = vim.diagnostic.severity.WARN },
             },
-            update_in_insert = true,
-            underline = true,
-            severity_sort = true,
+            signs = {
+                text = {
+                    [vim.diagnostic.severity.HINT]  = "",
+                    [vim.diagnostic.severity.ERROR] = "",
+                    [vim.diagnostic.severity.INFO]  = "",
+                    [vim.diagnostic.severity.WARN]  = ""
+                }
+            },
+            -- 输入实时更新提示错误
+            -- update_in_insert = true,
             float = {
                 focusable = true,
                 style = "minimal",
