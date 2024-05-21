@@ -8,7 +8,12 @@ vim.o.background = "dark"
 vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
-
+vim.cmd([[
+    set guicursor=n-v-c:block,i-ci-cr-c-ve:ver25,r-cr:hor20,o:hor50
+    " autocmd FocusLost * hi TermCursor cterm=NONE gui=NONE
+    " autocmd FocusGained * hi TermCursor cterm=reverse gui=reverse
+    au VimLeave * set guicursor=a:ver25
+]])
 -- 右下角显示的jkhl等移到lualine
 -- sections = {
 --     ...
