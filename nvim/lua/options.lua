@@ -8,12 +8,17 @@ vim.o.background = "dark"
 vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
-vim.cmd([[
-    set guicursor=n-v-c:block,i-ci-cr-c-ve:ver25,r-cr:hor20,o:hor50
-    " autocmd FocusLost * hi TermCursor cterm=NONE gui=NONE
-    " autocmd FocusGained * hi TermCursor cterm=reverse gui=reverse
-    au VimLeave * set guicursor=a:ver25
-]])
+vim.opt.guicursor = {
+    "n-v-c:block",
+    "i-ci-c-cr-ve:ver25",
+    "r-cr:hor20",
+    "o:hor50",
+}
+vim.api.nvim_create_autocmd("ExitPre", {
+    group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+    command = "set guicursor=a:ver25",
+    desc = "Set cursor back to beam when leaving Neovim."
+})
 -- 右下角显示的jkhl等移到lualine
 -- sections = {
 --     ...
