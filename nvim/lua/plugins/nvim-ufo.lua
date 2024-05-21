@@ -4,7 +4,11 @@ return {
     enabled = true,
     config = function()
         vim.api.nvim_set_keymap("n", "<TAB>", "za", { noremap = true, silent = true })
-        vim.cmd([[ set nofoldenable]])
+        vim.cmd([[ 
+            set nofoldenable
+            " au BufWinLeave * silent mkview
+            " au BufWinEnter * silent loadview
+        ]])
         local handler = function(virtText, lnum, endLnum, width, truncate)
             local newVirtText = {}
             local suffix = (' 󰇘 󰁂 %d '):format(endLnum - lnum)
