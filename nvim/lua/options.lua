@@ -19,6 +19,10 @@ vim.api.nvim_create_autocmd("ExitPre", {
     command = "set guicursor=a:ver25",
     desc = "Set cursor back to beam when leaving Neovim."
 })
+-- vim.cmd([[
+-- let &t_SI = "\e[6 q"
+-- let &t_EI = "\e[2 q"
+-- ]])
 -- 右下角显示的jkhl等移到lualine
 -- sections = {
 --     ...
