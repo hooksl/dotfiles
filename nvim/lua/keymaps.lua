@@ -27,7 +27,7 @@ vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
 
 -- save
 -- TODO:opts属性silent=true noice会报错
-vim.keymap.set('n', '<c-s>', ':w<CR>',opts)
+vim.keymap.set('n', '<c-s>', '<cmd>w<CR>',opts)
 
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
