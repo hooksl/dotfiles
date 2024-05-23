@@ -19,5 +19,13 @@ return {
                 remove_blankline_trail = true,
             },
         }
+        -- 特定文件类型不显示缩进线
+        require "ibl".overwrite {
+            exclude = {
+                filetypes = {
+                    "dashboard"
+                }
+            }
+        }
     end,
 }
