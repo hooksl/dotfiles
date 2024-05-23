@@ -52,8 +52,10 @@ return {
             keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
             keymap("n", "<Leader>ci", "<cmd>Lspsaga incoming_calls<CR>", opts)
             keymap("n", "<Leader>co", "<cmd>Lspsaga outgoing_calls<CR>", opts)
-            keymap("n", "<space>f", function()
-                vim.lsp.buf.format({ async = true })
+            keymap("n", "<c-s>", function()
+                -- vim.lsp.buf.format({ async = true })
+                vim.lsp.buf.format({ async = false })
+                vim.api.nvim_command('write')
             end, opts)
         end
 

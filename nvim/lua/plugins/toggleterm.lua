@@ -11,7 +11,7 @@ return {
             float_opts = {
                 -- 'single' | 'double' | 'shadow' | 'curved' | ... other options supported by win open
                 border = 'curved', -- 边框
-                width = 200,
+                -- width = 200,
                 -- height = 100,
                 -- winblend = 1, -- 透明度
                 -- zindex = 80,
@@ -34,17 +34,23 @@ return {
         local T_ter   = require('toggleterm.terminal').Terminal
         local ter_opt = T_ter:new({
             -- dir = "git_dir",
-            -- cmd = "ls",
+            -- autochdir = true, -- when neovim changes it current directory the terminal will change it's own when next it's opened
+
+            -- cmd = "echo %",
             -- direction = 'horizontal',
             -- function to run on opening the terminal
             on_open = function(term)
                 -- vim.cmd("startinsert!")
                 vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
                 vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", [[<Cmd>wincmd h<CR>]],{ noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]],{ noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>wincmd k<CR>]], { noremap = true, silent = true })
-                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd h<CR>]],{ noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-h>", [[<Cmd>wincmd h<CR>]],
+                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-j>", [[<Cmd>wincmd j<CR>]],
+                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-k>", [[<Cmd>wincmd k<CR>]],
+                    { noremap = true, silent = true })
+                vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-l>", [[<Cmd>wincmd h<CR>]],
+                    { noremap = true, silent = true })
                 -- vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-w>", [[<C-\><C-n><C-w>]], { noremap = true, silent = true })
             end,
             -- function to run on closing the terminal

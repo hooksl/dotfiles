@@ -26,8 +26,8 @@ vim.keymap.set('n', 'tp', '<cmd>tabp<CR>', opts)
 vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
 
 -- save
--- TODO:opts属性silent=true noice会报错
-vim.keymap.set('n', '<c-s>', '<cmd>w<CR>',opts)
+-- 移到lspsaga
+-- vim.keymap.set('n', '<c-s>', '<cmd>w<CR>',opts)
 
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
@@ -44,8 +44,8 @@ unmap <c-w>d
 vim.keymap.set('n', '<c-w>', '<cmd>buffer #<cr>', opts)
 vim.keymap.set('n', 'n', '<cmd>set hlsearch<cr>n', opts)
 vim.keymap.set('n', 'N', '<cmd>set hlsearch<cr>N', opts)
-vim.keymap.set('n', '/', '<cmd>set hlsearch<cr>/', {silent=false})
-vim.keymap.set('n', '?', '<cmd>set hlsearch<cr>?', {silent=false})
+vim.keymap.set('n', '/', '<cmd>set hlsearch<cr>/', { silent = false })
+vim.keymap.set('n', '?', '<cmd>set hlsearch<cr>?', { silent = false })
 vim.keymap.set('n', '<leader>w', '*<cmd>set hlsearch<cr>', opts)
 vim.keymap.set('n', '<esc>', '<cmd>nohl<cr>', opts)
 
