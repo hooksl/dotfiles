@@ -1,6 +1,30 @@
 return {
     -- { 'joshdick/onedark.vim' },
     {
+        "catppuccin/nvim",
+        name = "catppuccin",
+        priority = 1000,
+        config = function()
+            require("catppuccin").setup({
+                flavour = "auto", -- latte, frappe, macchiato, mocha
+                background = {    -- :h background
+                    light = "latte",
+                    dark = "mocha",
+                },
+                transparent_background = false, -- disables setting the background color.
+                show_end_of_buffer = true,      -- shows the '~' characters after the end of buffers
+                term_colors = true,             -- sets terminal colors (e.g. `g:terminal_color_0`)
+                dim_inactive = {
+                    enabled = false,            -- dims the background color of inactive window
+                    shade = "dark",
+                    percentage = 0.15,          -- percentage of the shade to apply to the inactive window
+                },
+            })
+            vim.cmd.colorscheme "catppuccin"
+        end
+
+    },
+    {
         'folke/tokyonight.nvim',
         config = function()
             require("tokyonight").setup({
@@ -8,7 +32,7 @@ return {
                 -- or leave it empty to use the default settings
                 style = "storm",        -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
                 light_style = "day",    -- The theme is used when the background is set to light
-                transparent = true,     -- Enable this to disable setting the background color
+                transparent = false,    -- Enable this to disable setting the background color
                 terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
                 styles = {
                     -- Style to be applied to different syntax groups
@@ -39,7 +63,7 @@ return {
                 on_highlights = function(highlights, colors) end,
 
             })
-            vim.cmd.colorscheme "tokyonight"
+            -- vim.cmd.colorscheme "tokyonight"
         end,
         priority = 1000,
         opts = {},

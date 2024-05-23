@@ -14,7 +14,8 @@ return {
                 -- numbers = function(opts)
                 --     return string.format('%s', opts.ordinal)
                 -- end,
-                separator_style = "thin"
+                -- slant padded_slant slope padded_slope thick
+                separator_style = "slant"
             },
         })
         local opts = {
