@@ -41,8 +41,6 @@ return {
             })
             vim.cmd.colorscheme "tokyonight"
         end,
-        -- lazy = false,
-        -- lazy = true,
         priority = 1000,
         opts = {},
     }

@@ -27,8 +27,8 @@ return {
         vim.keymap.set('n', '<leader>bdh', ':BufferLineCloseLeft<CR>', opts)
         vim.keymap.set('n', '<leader><leader>', ':BufferLinePick<CR>', opts)
         vim.keymap.set('n', '<leader>bdd', ':BufferLineCloseOthers<CR>', opts)
-        vim.keymap.set('n', '<leader>h', ':bp<cr>', opts)
-        vim.keymap.set('n', '<leader>l', ':bn<cr>', opts)
+        -- vim.keymap.set('n', '<leader>h', ':bp<cr>', opts)
+        -- vim.keymap.set('n', '<leader>l', ':bn<cr>', opts)
 
         vim.keymap.set('n', '<leader>1', ':BufferLineGoToBuffer 1<CR>', opts)
         vim.keymap.set('n', '<leader>2', ':BufferLineGoToBuffer 2<CR>', opts)
