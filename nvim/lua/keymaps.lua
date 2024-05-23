@@ -26,8 +26,12 @@ vim.keymap.set('n', 'tp', '<cmd>tabp<CR>', opts)
 vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
 
 -- save
--- 移到lspsaga
--- vim.keymap.set('n', '<c-s>', '<cmd>w<CR>',opts)
+vim.keymap.set('n', '<c-s>', '<cmd>w<CR>', opts)
+vim.api.nvim_create_autocmd("BufWritePre", {
+    callback = function(args)
+        vim.lsp.buf.format({ async = false })
+    end,
+})
 
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
