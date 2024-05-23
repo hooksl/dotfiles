@@ -24,7 +24,7 @@ return {
                 "tailwindcss",
                 'tsserver',
                 'marksman',
-                "pyright"
+                "pyright",
             },
         })
     end,

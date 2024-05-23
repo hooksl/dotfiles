@@ -27,6 +27,13 @@ vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
 
 -- save
 vim.keymap.set('n', '<c-s>', '<cmd>w<CR>', opts)
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*",
+    callback = function()
+        vim.lsp.buf.format()
+    end,
+})
+
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
 -- 切换窗口
