@@ -26,7 +26,7 @@ vim.keymap.set('n', 'tp', '<cmd>tabp<CR>', opts)
 vim.keymap.set('n', 'tc', '<cmd>tabc<CR>', opts)
 
 -- save
--- vim.keymap.set('n', '<c-s>', '<cmd>w<CR>', opts)
+vim.keymap.set('n', '<c-s>', '<cmd>w<CR>', opts)
 -- 刷新文件
 vim.keymap.set('n', 'R', ':e!<CR>', opts)
 -- 切换窗口
