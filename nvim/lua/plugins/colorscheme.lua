@@ -39,9 +39,10 @@ return {
                 on_highlights = function(highlights, colors) end,
 
             })
+            vim.cmd.colorscheme "tokyonight"
         end,
         -- lazy = false,
-        lazy = true,
+        -- lazy = true,
         priority = 1000,
         opts = {},
     }

@@ -38,8 +38,6 @@ vim.keymap.set('n', 'R', ':e!<CR>', opts)
 -- 切换窗口
 vim.keymap.set('n', '<c-x>', '<c-w>x', opts)
 -- buffers
-vim.keymap.set('n', '<leader>h', ':bp<cr>', opts)
-vim.keymap.set('n', '<leader>l', ':bn<cr>', opts)
 -- 移除lsp里面的映射，加速切换c-w
 vim.cmd([[
 unmap <c-w><c-d>

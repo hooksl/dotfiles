@@ -1,5 +1,4 @@
 require('lazyvim')
-require('colorscheme')
 require('my_plugins.floatwin').mappings()
 require('options')
 require('keymaps')
