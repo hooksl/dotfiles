@@ -47,7 +47,7 @@ return {
             -- any other neo-tree windows
             "neo-tree",
         },
-        right={
+        right = {
             {
                 title = "Outline",
                 ft = "sagaoutline",
@@ -90,7 +90,8 @@ return {
             winbar = true,
             winfixwidth = true,
             winfixheight = false,
-            winhighlight = "WinBar:EdgyWinBar,Normal:EdgyNormal",
+            -- winhighlight = "WinBar:EdgyWinBar,Normal:EdgyNormal",
+            winhighlight = "WinBar:EdgyNormal,Normal:EdgyNormal",
             spell = false,
             signcolumn = "no",
         },

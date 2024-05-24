@@ -16,6 +16,7 @@ return {
                 -- winblend = 1, -- 透明度
                 -- zindex = 80,
             },
+            shade_terminals = false
         }
         local T_git   = require('toggleterm.terminal').Terminal
         local git_opt = T_git:new({

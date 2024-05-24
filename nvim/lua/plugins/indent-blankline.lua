@@ -23,7 +23,8 @@ return {
         require "ibl".overwrite {
             exclude = {
                 filetypes = {
-                    "dashboard"
+                    "dashboard",
+                    "help",
                 }
             }
         }
