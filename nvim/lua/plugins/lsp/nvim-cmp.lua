@@ -58,8 +58,8 @@ return {
                 vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
         end
 
-        -- vim.opt.spell = true
-        -- vim.opt.spelllang = { "en_us" }
+        vim.opt.spell = true
+        vim.opt.spelllang = { "en_us" }
         local luasnip = require("luasnip")
         local cmp = require("cmp")
         local lspkind = require("lspkind")

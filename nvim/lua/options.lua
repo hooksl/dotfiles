@@ -19,7 +19,7 @@ vim.api.nvim_create_autocmd("ExitPre", {
     desc = "Set cursor back to beam when leaving Neovim."
 })
 -- 禁用拼写检查(否则会出现下划线)
-vim.opt.spell = false
+-- vim.opt.spell = false
 
 -- vim.cmd([[
 -- let &t_SI = "\e[6 q"
