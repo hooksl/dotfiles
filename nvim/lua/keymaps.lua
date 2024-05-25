@@ -79,6 +79,6 @@ vim.keymap.set('v', '>', '>gv', opts)
 
 
 --格式化
-vim.keymap.set('n', '<leader>=', 'mwggvG=`w', opts)
+-- vim.keymap.set('n', '<leader>=', 'mwggvG=`w', opts)
 
 vim.keymap.set('v', 'v', 'vggVG', opts)
