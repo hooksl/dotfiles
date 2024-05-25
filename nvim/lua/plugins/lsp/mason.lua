@@ -25,6 +25,7 @@ return {
                 'tsserver',
                 'marksman',
                 "pyright",
+                "ruff", -- python 格式化
             },
         })
     end,
