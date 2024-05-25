@@ -20,7 +20,6 @@ return {
             ensure_installed = {
                 'lua_ls',
                 'volar',
-                "eslint",
                 "tailwindcss",
                 'tsserver',
                 'marksman',
