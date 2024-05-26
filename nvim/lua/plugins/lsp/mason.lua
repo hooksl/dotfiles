@@ -17,6 +17,7 @@ return {
             -- A list of servers to automatically install if they're not already installed
             -- 自动安装服务
             -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
+            automatic_installation = true,
             ensure_installed = {
                 'lua_ls',
                 'volar',
@@ -24,7 +25,8 @@ return {
                 'tsserver',
                 'marksman',
                 "pyright",
-                "ruff", -- python 格式化
+                "ruff",
+                "bashls"
             },
         })
     end,

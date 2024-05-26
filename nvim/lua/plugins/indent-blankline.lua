@@ -7,7 +7,7 @@ return {
             indent = {
                 -- char = { "┊" },
                 char = { " ", "┊", "┊", "┊", "┊" },
-                tab_char = { "a", "b", "c", "d", "e" },
+                -- tab_char = { "a", "b", "c", "d", "e" },
             },
             scope = {
                 -- 关掉函数上的横线
