@@ -19,7 +19,7 @@ family = "JetBrainsMono Nerd Font"
 [window]
 # position = { x = 0, y = 0 }
 # padding = { x = 3, y = 3 }
-dimensions={columns=180,lines=60}
+dimensions={columns=100,lines=31}
 dynamic_padding = true
 opacity = 0.98
 blur = true
