@@ -91,6 +91,20 @@ lspconfig.tailwindcss.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
 })
+lspconfig.rust_analyzer.setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	settings = {
+		["rust-analyzer"] = {
+			-- check = {
+			-- 	command = "clippy",
+			-- },
+			diagnostics = {
+				enable = true,
+			},
+		},
+	},
+})
 lspconfig.volar.setup({
 	on_attach = on_attach,
 	capabilities = capabilities,
