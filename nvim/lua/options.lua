@@ -7,17 +7,17 @@ vim.opt.signcolumn = "yes"
 -- vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
-vim.opt.guicursor = {
-	"n-v-c:block",
-	"i-ci-c-cr-ve:ver25",
-	"r-cr:hor20",
-	"o:hor50",
-}
-vim.api.nvim_create_autocmd("ExitPre", {
-	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
-	command = "set guicursor=a:ver25",
-	desc = "Set cursor back to beam when leaving Neovim.",
-})
+-- vim.opt.guicursor = {
+-- 	"n-v-c:block",
+-- 	"i-ci-c-cr-ve:ver25",
+-- 	"r-cr:hor20",
+-- 	"o:hor50",
+-- }
+-- vim.api.nvim_create_autocmd("ExitPre", {
+-- 	group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+-- 	command = "set guicursor=a:ver25",
+-- 	desc = "Set cursor back to beam when leaving Neovim.",
+-- })
 -- 禁用拼写检查(否则会出现下划线)
 -- vim.opt.spell = false
 

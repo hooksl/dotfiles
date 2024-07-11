@@ -2,28 +2,35 @@ import = [
     "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
 ]
 [shell]
-args = ['--login']
-program = "/usr/bin/zsh"
+args = ['-l']
+program = "/bin/zsh"
 
-[cursor]
-style = {shape ="Beam",blinking = "Never"}
-vi_mode_style ={shape ="Beam",blinking = "Never"}
+# [cursor]
+# style = {shape ="Beam",blinking = "Never"}
+# vi_mode_style ={shape ="Beam",blinking = "Never"}
+[env]
+TERM = "xterm-256color"
 
 [font]
-size = 13.0
+size = 15.0
 
 [font.normal]
 family = "JetBrainsMono Nerd Font"
 # family = "Hack Nerd Font"
 
 [window]
-# position = { x = 0, y = 0 }
-# padding = { x = 3, y = 3 }
-dimensions={columns=100,lines=31}
+option_as_alt="Both"
+position = { x = 100, y = 0 }
+dimensions={columns=180,lines=58}
 dynamic_padding = true
-opacity = 0.98
-blur = true
-decorations = 'none'
+opacity = 1
+blur = false
+  # Available values:
+  # - full: borders and title bar
+  # - none: neither borders nor title bar
+  # - transparent: title bar, transparent background and title bar buttons
+  # - buttonless: title bar, transparent background, but no title bar buttons
+# decorations = 'buttonless'
 
 # opacity = 1
 # blur = true
