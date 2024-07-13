@@ -4,7 +4,7 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 -- 外观
 vim.opt.signcolumn = "yes"
--- vim.opt.termguicolors = true
+vim.opt.termguicolors = true
 vim.opt.laststatus = 3
 vim.opt.splitkeep = "screen"
 -- vim.opt.guicursor = {

@@ -12,3 +12,4 @@ nvim/lua/my_plugins/lua/fanyi
 nvim/translate
 nvim/lua/.DS_Store
 nvim/.DS_Store
+.DS_Store
