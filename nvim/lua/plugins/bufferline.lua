@@ -3,6 +3,17 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
         require("bufferline").setup({
+            highlights = {
+                -- fill = {
+                --     bg = {
+                --         attribute = "nil",
+                --         highlight = "Pmenu"
+                --     }
+                -- },
+                -- separator = { bg = "#62b3b2" },
+                -- separator_selected = { fg = "cyan", bg = "#142832" },
+                -- separator_visible = { bg = "cyan" },
+            },
             options = {
                 diagnostics = "nvim_lsp",
                 offsets = { {
@@ -15,7 +26,7 @@ return {
                 --     return string.format('%s', opts.ordinal)
                 -- end,
                 -- slant padded_slant slope padded_slope thick
-                separator_style = "slant"
+                separator_style ={"",""}
             },
         })
         local opts = {
