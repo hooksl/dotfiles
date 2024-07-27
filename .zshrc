@@ -110,7 +110,7 @@ alias unproxy='unset all_proxy'
 alias ls="eza --icons"
 
 # 退出 ranger 的时候，cd 到相应的目录
-# alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 alias python=/usr/local/bin/python3
 alias pip=/usr/local/bin/pip3
