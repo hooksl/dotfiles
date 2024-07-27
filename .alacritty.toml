@@ -1,6 +1,6 @@
-import = [
-    "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
-]
+# import = [
+#     "~/.config/alacritty/themes/themes/tokyo-night-storm.toml"
+# ]
 [shell]
 args = ['-l']
 program = "/bin/zsh"
@@ -23,47 +23,56 @@ option_as_alt="Both"
 # position = { x = 100, y = 0 }
 dimensions={columns=180,lines=58}
 # dynamic_padding = true
-opacity = 1
-blur = false
+opacity = 0.95
+blur = true
   # Available values:
   # - full: borders and title bar
   # - none: neither borders nor title bar
   # - transparent: title bar, transparent background and title bar buttons
   # - buttonless: title bar, transparent background, but no title bar buttons
-# decorations = 'buttonless'
-
-# opacity = 1
-# blur = true
-# [window.padding]
-# x = 6
-# y = 10
+decorations = 'buttonless'
 
 
-# [colors.normal]
-# black = "0x2e3436"
-# red = "0xcc0000"
-# green = "0x73d216"
-# yellow = "0xedd400"
-# blue = "0x3465a4"
-# magenta = "0x75507b"
-# cyan = "0x06989a"
-# white = "0xd3d7cf"
 
-# [colors.bright]
-#  black=   '0x2e3436'
-#  red=     '0xef2929'
-#  green=   '0x8ae234'
-#  yellow=  '0xfce94f'
-#  blue=    '0x729fcf'
-#  magenta= '0xad7fa8'
-#  cyan=    '0x34e2e2'
-#  white=   '0xeeeeec'
 
-# [colors.primary]
-# background = "#282a36"
-# foreground = "0xeeeeec"
+# TokyoNight Alacritty Colors
+# Default colors
+[colors.primary]
+background = '#24283b'
+foreground = '#c0caf5'
 
-# [colors.cursor]
-# text = "CellBackground"
-# cursor = "CellForeground"
+#[colors.cursor]
+#cursor = '#c0caf5'
+#text = '#24283b'
+
+# Normal colors
+[colors.normal]
+black = '#1d202f'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#a9b1d6'
+
+# Bright colors
+[colors.bright]
+black = '#414868'
+red = '#f7768e'
+green = '#9ece6a'
+yellow = '#e0af68'
+blue = '#7aa2f7'
+magenta = '#bb9af7'
+cyan = '#7dcfff'
+white = '#c0caf5'
+
+# Indexed Colors
+[[colors.indexed_colors]]
+index = 16
+color = '#ff9e64'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#db4b4b'
 
