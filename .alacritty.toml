@@ -20,8 +20,8 @@ family = "JetBrainsMono Nerd Font"
 
 [window]
 option_as_alt="Both"
-# position = { x = 100, y = 0 }
-dimensions={columns=180,lines=58}
+position = { x = 200, y = 65 }
+dimensions={columns=180,lines=51}
 # dynamic_padding = true
 opacity = 0.95
 blur = true
