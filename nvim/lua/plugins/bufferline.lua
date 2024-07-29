@@ -4,12 +4,13 @@ return {
     config = function()
         require("bufferline").setup({
             highlights = {
-                -- fill = {
-                --     bg = {
-                --         attribute = "nil",
-                --         highlight = "Pmenu"
-                --     }
-                -- },
+                fill = {
+                    -- bg = {
+                    --     attribute = "#202334",
+                    --     highlight = "#202334"
+                    -- }
+                    bg = "#1b1e2b"
+                },
                 -- separator = { bg = "#62b3b2" },
                 -- separator_selected = { fg = "cyan", bg = "#142832" },
                 -- separator_visible = { bg = "cyan" },
