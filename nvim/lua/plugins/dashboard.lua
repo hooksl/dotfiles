@@ -20,13 +20,13 @@ return {
                     {
                         desc = ' Docker',
                         group = 'DiagnosticHint',
-                        action = 'lua require("telescope.builtin").find_files({cwd="/hdd/work/docker/docker-compose/"})',
+                        action = 'lua require("telescope.builtin").find_files({cwd="~/works/"})',
                         key = 'd',
                     },
                     {
                         desc = ' Nvim',
                         group = 'Number',
-                        action = 'lua require("telescope.builtin").find_files({cwd="/hdd/work/dotfiles/nvim/"})',
+                        action = 'lua require("telescope.builtin").find_files({cwd="~/works/dotfiles/nvim/"})',
                         key = 'n',
                     },
                 },
