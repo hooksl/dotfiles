@@ -8,6 +8,9 @@ return {
 			ensure_installed = {
 				"vue",
 				"html",
+                'http',
+                "xml",
+                "graphql",
 				"css",
 				"vim",
 				"bash",
