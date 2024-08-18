@@ -103,13 +103,14 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 
-alias proxy='export all_proxy=socks5://127.0.0.1:1080'
-alias unproxy='unset all_proxy'
+# alias proxy='export all_proxy=socks5://127.0.0.1:1080'
+# # alias unproxy='unset all_proxy'
+export http_proxy="http://127.0.0.1:2080"
+export https_proxy="http://127.0.0.1:2080"
+# export ALL_PROXY=socks5://127.0.0.1:1080
 
 alias ls="eza --icons"
 
 # 退出 ranger 的时候，cd 到相应的目录
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
-alias python=/usr/local/bin/python3
-alias pip=/usr/local/bin/pip3
