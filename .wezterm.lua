@@ -27,6 +27,8 @@ local config={
         top=0,
         bottom=0,
     },
+    initial_cols = 180,  -- 设置窗口宽度为 120 列
+    initial_rows = 50,   -- 设置窗口高度为 30 行
     window_background_opacity= 0.95,
     macos_window_background_blur = 80,
     text_background_opacity=0.9,
