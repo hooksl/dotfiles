@@ -1,5 +1,15 @@
 注意：本文内容适用于 Tmux 2.3 及以上的版本，但是绝大部分的特性低版本也都适用，鼠标支持、VI 模式、插件管理在低版本可能会与本文不兼容。
 
+# 面板迁移
+
+命令格式：-t [session_name]:[window].[pane]
+```shell
+# join-pane -s [session_name]:[window].[pane] -t [session_name]:[window].[pane]
+# join-pane -s [window].[pane] -t [window].[pane] 省略会话名称为在当前会话
+
+# 将窗口1的1面板移动到窗口2的1面板
+join-pane -s 1.1 -t 2.1
+```
 # Tmux 快捷键 & 速查表 & 简明教程
 
 启动新会话：
