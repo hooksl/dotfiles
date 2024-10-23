@@ -1,0 +1,16 @@
+[user]
+	name = hooks
+	email = liujiang047@gmail.com
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[http "https://github.com"]
+	proxy = socks5://127.0.0.1:1080
+[https "https://github.com"]
+	proxy = socks5://127.0.0.1:1080
+[http]
+	proxy = http://127.0.0.1:2080
+[https]
+	proxy = https://127.0.0.1:1080
